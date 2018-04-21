@@ -14,6 +14,10 @@ artist2 = Artist.new({
   'name' => 'Blur'
   })
 
+artist1.save()
+artist2.save()
+
+
 album1 = Album.new({
   'title' => 'Humbug',
   'stock_level' => 20,
@@ -29,6 +33,10 @@ album3 = Album.new({
   'stock_level' => 10,
   'artist_id' => artist2.id
   })
+
+album1.save()
+album2.save()
+album3.save()
 
 binding.pry
 nil

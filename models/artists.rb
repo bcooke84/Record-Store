@@ -11,15 +11,41 @@ class Artist
     @name = options['name']
   end
 
-  def self.show_all()
-    sql = "SELECT * FROM artists;"
-    result = SqlRunner.run(sql)
-    return Artist.map_artists(result)
+  def save()
+    sql = "INSERT INTO artists (name) VALUES ($1) returning id"
+    values = [@name]
+    result = SqlRunner.run(sql, values)[0]
+    @id = result['id'].to_i
+  end
+
+  def update()
+    sql = "UPDATE artists SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM artists WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
     sql = "DELETE FROM artists;"
     SqlRunner.run(sql)
+  end
+
+  def self.find_all()
+    sql = "SELECT * FROM artists;"
+    result = SqlRunner.run(sql)
+    return Artist.map_artists(result)
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * from artists WHERE id = $1;"
+    values = [id]
+    array = SqlRunner.run(sql, values)
+    return Artist.map_artists(array)
   end
 
   def self.map_artists(artist_data)
