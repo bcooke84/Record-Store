@@ -1,9 +1,9 @@
-require_relative('../../db/sql_runner.rb')
-require_relative('../albums.rb')
-require_relative('../artists.rb')
-require('minitest/autorun')
-require('minitest/rg')
-require('pry-byebug')
+require_relative( '../../db/sql_runner.rb' ) 
+require_relative( '../albums.rb' )
+require_relative( '../artists.rb' )
+require( 'minitest/autorun' )
+require( 'minitest/rg' )
+require( 'pry-byebug' )
 
 class ArtistTest < MiniTest::Test
 

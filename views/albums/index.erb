@@ -1,0 +1,8 @@
+
+
+<% @albums.each do |album| %>
+ <p>Artist:  <%= album.get_artist.name %> </p>
+ <p>Title: <%= album.title %> <br>
+ <p>Stock Level: <%= album.stock_level_warning %> <br>
+ <hr />
+<% end %>

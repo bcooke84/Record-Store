@@ -1,5 +1,5 @@
-require_relative('../db/sql_runner.rb')
-require_relative('albums.rb')
+require_relative( '../db/sql_runner.rb' )
+require_relative( 'albums.rb' )
 
 class Artist
 
@@ -36,20 +36,28 @@ class Artist
   end
 
   def self.find_all()
-    sql = "SELECT * FROM artists;"
+    sql = "SELECT * FROM artists ORDER BY name;"
     result = SqlRunner.run(sql)
     return Artist.map_artists(result)
   end
 
   def self.find_by_id(id)
-    sql = "SELECT * from artists WHERE id = $1;"
+    sql = "SELECT * FROM artists WHERE id = $1;"
     values = [id]
-    array = SqlRunner.run(sql, values)
-    return Artist.map_artists(array)
+    result = SqlRunner.run(sql, values)
+    return Artist.map_artists(result)
+  end
+
+  def get_albums()
+    sql = "SELECT * FROM albums WHERE artist_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Album.map_albums(result)
   end
 
   def self.map_artists(artist_data)
     return artist_data.map { |artist| Artist.new(artist) }
   end
+
 
 end
