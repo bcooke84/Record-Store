@@ -36,7 +36,7 @@ class Artist
   end
 
   def self.find_all()
-    sql = "SELECT * FROM artists ORDER BY name;"
+    sql = "SELECT * FROM artists ORDER BY name"
     result = SqlRunner.run(sql)
     return Artist.map_artists(result)
   end
@@ -49,7 +49,7 @@ class Artist
   end
 
   def get_albums()
-    sql = "SELECT * FROM albums WHERE artist_id = $1;"
+    sql = "SELECT * FROM albums WHERE artist_id = $1 ORDER BY year;"
     values = [@id]
     result = SqlRunner.run(sql, values)
     return Album.map_albums(result)

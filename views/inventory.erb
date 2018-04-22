@@ -1,0 +1,15 @@
+<% @artists.each do |artist| %>
+ <% albums = artist.get_albums %>
+
+ <% albums.each do |album| %>
+ <img src= "<%= album.artwork %>"  width="150" height="150">
+ <p>Artist:  <%= artist.name %> </p>
+ <p>Title: <%= album.title %> <br>
+ <p>Release Year: <%= album.year %> <br>
+ <p>Genre: <%= album.genre %> <br>
+ <p>Stock Level: <%= album.stock_level %> <br>
+ <br>
+ <% end %>
+
+ <hr />
+<% end %>

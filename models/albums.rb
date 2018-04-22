@@ -43,7 +43,7 @@ class Album
   end
 
   def self.find_all()
-    sql = "SELECT * FROM albums ORDER BY title;"
+    sql = "SELECT * FROM albums ORDER BY title"
     result = SqlRunner.run(sql)
     return Album.map_albums(result)
   end
@@ -51,8 +51,8 @@ class Album
   def self.find_by_id(id)
     sql = "SELECT * from albums WHERE id = $1;"
     values = [id]
-    array = SqlRunner.run(sql, values)
-    return Album.map_albums(array)
+    array = SqlRunner.run(sql, values)[0]
+    return Album.new(array)
   end
 
   def stock_level_warning()
@@ -65,7 +65,7 @@ class Album
   end
 
   def get_artist()
-    sql = "SELECT * FROM artists WHERE id = $1;"
+    sql = "SELECT * FROM artists WHERE id = $1"
     values = [@artist_id]
     result = SqlRunner.run(sql, values)
     return Artist.map_artists(result).first()
@@ -73,6 +73,12 @@ class Album
 
   def self.map_albums(albums_data)
     return albums_data.map { |album| Album.new(album) }
+  end
+
+  def self.find_unique_genres()
+    sql = "SELECT DISTINCT genre FROM albums ORDER BY genre;"
+    result = SqlRunner.run(sql)
+    return result
   end
 
 end

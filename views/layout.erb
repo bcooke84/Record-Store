@@ -4,9 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Record Store</title>
+  <title>Southside Sounds</title>
 </head>
 <body>
-  <%= yield %>
+  <nav>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/home/inventory">Stock Inventory</a></li>
+      <li><a href="/home/artists">Artist List</a></li>
+      <li><a href="/home/albums">Album List</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <article>
+        <%= yield %><!-- Article (content) goes here -->
+      </article>
+    </section>
+  </main>
+  <aside>
+    <!-- Secondary navigation or additional modules go here -->
+  </aside>
+  <footer>
+    <!-- Footer goes here -->
+  </footer>
 </body>
 </html>
