@@ -15,3 +15,8 @@ get '/home/inventory' do
   @artists = Artist.find_all()
   erb ( :inventory )
 end
+
+get '/home/stock-take' do
+  @albums = Album.find_all()
+  erb ( :stock_take )
+end

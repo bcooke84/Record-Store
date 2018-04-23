@@ -45,7 +45,7 @@ class Artist
     sql = "SELECT * FROM artists WHERE id = $1;"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return Artist.map_artists(result)
+    return Artist.map_artists(result)[0]
   end
 
   def get_albums()

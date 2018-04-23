@@ -1,5 +1,10 @@
 <% @artists.each do |artist| %>
  <p>Artist:  <%= artist.name %> </p>
 
- <hr />
+ <form action="/home/artists/<%= artist.id %>" method="get">
+ <input type="submit" value="Show All Albums">
+ </form>
+
+ <hr/>
+
 <% end %>

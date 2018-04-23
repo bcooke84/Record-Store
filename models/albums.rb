@@ -13,8 +13,8 @@ class Album
     @genre = options['genre']
     @year = options['year'].to_i
     @artwork = options['artwork']
-    @cost_price = options['cost_price'].to_i
-    @store_price = options['store_price'].to_i
+    @cost_price = options['cost_price'].to_f
+    @store_price = options['store_price'].to_f
     @artist_id = options['artist_id'].to_i
   end
 
@@ -79,6 +79,27 @@ class Album
     sql = "SELECT DISTINCT genre FROM albums ORDER BY genre;"
     result = SqlRunner.run(sql)
     return result
+  end
+
+  def self.total_album_stock_level()
+    albums = self.find_all()
+    total = 0
+    albums.each { |album| total += album.stock_level }
+    return total
+  end
+
+  def self.total_album_cost_price()
+    albums = self.find_all()
+    total = 0
+    albums.each { |album| total += (album.stock_level * album.cost_price) }
+    return total.round(2)
+  end
+
+  def self.total_album_store_price()
+    albums = self.find_all()
+    total = 0
+    albums.each { |album| total += (album.stock_level * album.store_price) }
+    return total.round(2)
   end
 
 end

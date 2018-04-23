@@ -1,14 +1,8 @@
 <img src= "<%= @album.artwork %>"  width="150" height="150">
-<p>Artist:  <%= @album.get_artist.name %> </p>
-<p>Title: <%= @album.title %> <br>
-<p>Release Year: <%= @album.year %> <br>
-<p>Genre: <%= @album.genre %> <br>
-<p>Stock Level: <%= @album.stock_level%> <br>
-
-<form action="/home/albums/<%= @album.id %>/edit" method="get">
-  <input type="submit" value="Edit Record">
-</form>
-
-<form action="/home/albums/<%= @album.id %>/delete" method="post">
-  <input type="submit" value="Delete Record">
-</form>
+<p>Title:         <%= @album.title           %> </p>
+<p>Artist:        <%= @album.get_artist.name %> </p>
+<p>Release Year:  <%= @album.year            %> </p>
+<p>Genre:         <%= @album.genre           %> </p>
+<p>Stock Level:   <%= @album.stock_level     %> </p>
+<p>Cost Price:   £<%= @album.cost_price      %> </p>
+<p>Store Price:  £<%= @album.store_price     %> </p>

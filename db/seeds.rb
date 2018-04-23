@@ -17,7 +17,6 @@ artist2 = Artist.new({
 artist1.save()
 artist2.save()
 
-
 album1 = Album.new({
   'title' => 'Humbug',
   'stock_level' => 20,
@@ -49,7 +48,7 @@ album3 = Album.new({
   'artist_id' => artist2.id
   })
 album4 = Album.new({
-  'title' => 'Whatever People Say I Am, That''s What I''m Not',
+  'title' => 'Whatever People Say I Am, That\'s What I\'m Not',
   'stock_level' => 50,
   'genre' => 'Hip-Hop',
   'year' => 2006,
@@ -69,13 +68,11 @@ album5 = Album.new({
   'artist_id' => artist1.id
   })
 
-
-
 album1.save()
 album2.save()
 album3.save()
 album4.save()
 album5.save()
 
-binding.pry
-nil
+# binding.pry
+# nil

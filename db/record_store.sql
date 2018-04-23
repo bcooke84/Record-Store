@@ -13,7 +13,7 @@ CREATE TABLE albums(
   genre VARCHAR(255),
   year INT,
   artwork VARCHAR(255),
-  cost_price MONEY,
-  store_price MONEY,
+  cost_price DECIMAL(4,2),
+  store_price DECIMAL(4,2),
   artist_id INT REFERENCES artists(id) ON DELETE CASCADE
 );
