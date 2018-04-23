@@ -2,28 +2,61 @@
  <input type="submit" value="Add New Record">
 </form>
 
+<table>
+  <tr>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Album</th>
+    <th></th>
+    <th>Genre</th>
+    <th></th>
+    <th>Release Year</th>
+    <th></th>
+    <th>Cost Price</th>
+    <th></th>
+    <th>Store Price</th>
+    <th></th>
+    <th>Stock Level</th>
+    <th></th>
+    <th>Edit</th>
+    <th></th>
+    <th>Delete</th>
+    <th></th>
+    <hr/>
+  </tr>
+
 <% @artists.each do |artist| %>
-<h1> <%= artist.name %>  </h1>
 <% albums = artist.get_albums %>
-
 <% albums.each do |album| %>
-<img src= "<%= album.artwork %>"  width="150" height="150">
-<p>Title:        <%= album.title       %> </p>
-<p>Stock Level:  <%= album.stock_level %> </p>
-<p>Cost Price:  £<%= album.cost_price  %> </p>
-<p>Store Price: £<%= album.store_price %> </p>
-
-<form action="/home/albums/<%= album.id %>/edit" method="get">
-  <input type="submit" value="Edit Record">
-</form>
-
-<form action="/home/albums/<%= album.id %>/delete" method="post">
- <input type="submit" value="Delete Record">
-</form>
-<br>
-
+  <tr>
+    <td>|</td>
+    <td><a href="/home/artists/<%=artist.id%>"><%= artist.name %></a></td>
+    <td>|</td>
+    <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
+    <td>|</td>
+    <td><%= album.genre %></td>
+    <td>|</td>
+    <td><%= album.year %></td>
+    <td>|</td>
+    <td><%= album.cost_price %></td>
+    <td>|</td>
+    <td><%= album.store_price %></td>
+    <td>|</td>
+    <td><%= album.stock_level %></td>
+    <td>|</td>
+    <td>
+      <form action="/home/albums/<%= album.id %>/edit" method="get">
+      <input type="submit" value="Edit Record">
+    </form></td>
+    <td>|</td>
+    <td>
+      <form action="/home/albums/<%= album.id %>/delete" method="post">
+      <input type="submit" value="Delete Record">
+    </form></td>
+    <td>|</td>
+  </tr>
+  <% end %>
 <% end %>
-
+</table>
 <hr/>
-
-<% end %>

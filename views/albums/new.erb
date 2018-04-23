@@ -1,6 +1,7 @@
 <form action="/home/albums" method="post" autocomplete="off">
 
-  <label for="artist_id">Artist:<input list="artist_list" name="artist_id"/></label>
+  <label for="artist_id">Artist:</label>
+  <input list="artist_list" name="artist_id"/>
   <datalist id="artist_list">
   <%@artists.each do |artist| %>
   <option value= "<%=artist.name%>"><%=artist.name%> </option>
@@ -19,7 +20,7 @@
   </datalist><br>
 
   <label for="year">Release Year:</label>
-  <input type="text" id="year" name="year"></br>
+  <input type="text" id="year" name="year" minlength="4" maxlength="4" size="6"></br>
 
   <label for="artwork">Artwork:</label>
   <input type="text" id="artwork" name="artwork"></br>

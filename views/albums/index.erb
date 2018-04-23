@@ -6,10 +6,7 @@
  <p>Release Year: <%= album.year            %> </p>
  <p>Genre:        <%= album.genre           %> </p>
  <p>Stock Level:  <%= album.stock_level     %> </p>
-
- <form action="/home/albums/<%= album.id %>" method="get">
- <input type="submit" value="Record Details">
- </form>
+ <p>Store Price:  <%= album.store_price     %> </p>
 
  <hr/>
 <% end %>

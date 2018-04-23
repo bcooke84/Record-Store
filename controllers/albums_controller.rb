@@ -45,9 +45,9 @@ end
 
 # UPDATE
 post "/home/albums/:id" do
-  @album = Album.new(params)
+  @album = Album.edit_album_from_form(params)
   @album.update()
-  redirect to '/home/albums'
+  redirect to '/home/inventory'
 end
 
 # DESTROY

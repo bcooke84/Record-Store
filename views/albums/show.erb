@@ -6,3 +6,7 @@
 <p>Stock Level:   <%= @album.stock_level     %> </p>
 <p>Cost Price:   £<%= @album.cost_price      %> </p>
 <p>Store Price:  £<%= @album.store_price     %> </p>
+
+<form action="/home/inventory" method="get">
+<input type="submit" value="Back to Inventory">
+</form>

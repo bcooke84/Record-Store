@@ -1,10 +1,18 @@
 <form action="/home/albums/<%= @album.id %>" method="post" autocomplete="off">
 
+<!-- # EDIT PAGE.
+Artist field to show string with artist name but needs to convert
+to artist_id before updating.
+If this is a new artist, it needs to create a new artist
+entry in database, and update existing album record.
+If this is an existing artist, it only needs to update the existing album
+record. -->
+
   <label for="artist_id">Artist:</label>
-  <input list="artist_list" name="artist_id" value="<%= @album.artist_id %>"/>
+  <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>"/>
   <datalist id="artist_list">
     <%@artists.each do |artist| %>
-    <option value= "<%=artist.id%>"><%=artist.name%> </option>
+    <option value= "<%=artist.name%>"><%=artist.name%> </option>
     <%end%>
   </datalist> <br>
 

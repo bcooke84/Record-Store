@@ -56,9 +56,9 @@ class Album
   end
 
   def stock_level_warning()
-    if @stock_level < 10
+    if @stock_level < 5
       return "LOW"
-    elsif @stock_level > 30
+    elsif @stock_level > 15
       return "HIGH"
     else return "MEDIUM"
     end
@@ -112,7 +112,20 @@ class Album
       params[:artist_id] = new_artist.id.to_i
       new_album = Album.new(params)
       new_album.save()
-      boolean = true
       end
     end
+
+    def self.edit_album_from_form(params)
+      if Artist.check_if_artist_exists(params) == true
+        new_album = Album.new(params)
+        return new_album
+      elsif Artist.check_if_artist_exists(params) == false
+        new_artist = Artist.new({ 'name' => params[:artist_id] })
+        new_artist.save()
+        params[:artist_id] = new_artist.id.to_i
+        new_album = Album.new(params)
+        return new_album
+        end
+      end
+
   end

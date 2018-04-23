@@ -1,17 +1,18 @@
+<form action="/home/artists" method="get">
+  <input type="submit" value="Back to Artists">
+</form>
+
 <h1> <%= @artist.name %>  </h1>
 <% albums = @artist.get_albums %>
 
 <% albums.each do |album| %>
-<img src= "<%= @album.artwork %>"  width="150" height="150">
-<p>Title:         <%= @album.title           %> </p>
-<p>Artist:        <%= @album.get_artist.name %> </p>
-<p>Release Year:  <%= @album.year            %> </p>
-<p>Genre:         <%= @album.genre           %> </p>
-<p>Stock Level:   <%= @album.stock_level     %> </p>
-
-<form action="/home/artists" method="get">
-  <input type="submit" value="Back to Artists">
-</form>
+<img src= "<%= album.artwork %>"  width="150" height="150">
+<p>Title:         <%= album.title           %> </p>
+<p>Artist:        <%= album.get_artist.name %> </p>
+<p>Release Year:  <%= album.year            %> </p>
+<p>Genre:         <%= album.genre           %> </p>
+<p>Stock Level:   <%= album.stock_level     %> </p>
+<p>Store Price:   <%= album.store_price     %> </p>
 
 <% end %>
 

@@ -62,7 +62,7 @@ class Artist
   def self.check_if_artist_exists(params)
     artists = Artist.find_all()
     for artist in artists
-      if artist.name == params[:artist_id]
+      if artist.name.downcase == params[:artist_id].downcase
         params[:artist_id] = artist.id.to_i
         return true
       end
