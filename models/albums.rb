@@ -71,6 +71,25 @@ class Album
     return Artist.map_artists(result).first()
   end
 
+  def self.get_albums_by_album()
+    sql = "SELECT * FROM albums ORDER BY title;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_stock_level()
+    sql = "SELECT * FROM albums ORDER BY stock_level;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_genre(genre)
+    sql = "SELECT * FROM albums WHERE genre = $1;"
+    values = [genre]
+    result = SqlRunner.run(sql, values)
+    return Album.map_albums(result)
+  end
+
   def self.map_albums(albums_data)
     return albums_data.map { |album| Album.new(album) }
   end
@@ -112,20 +131,20 @@ class Album
       params[:artist_id] = new_artist.id.to_i
       new_album = Album.new(params)
       new_album.save()
-      end
     end
-
-    def self.edit_album_from_form(params)
-      if Artist.check_if_artist_exists(params) == true
-        new_album = Album.new(params)
-        return new_album
-      elsif Artist.check_if_artist_exists(params) == false
-        new_artist = Artist.new({ 'name' => params[:artist_id] })
-        new_artist.save()
-        params[:artist_id] = new_artist.id.to_i
-        new_album = Album.new(params)
-        return new_album
-        end
-      end
-
   end
+
+  def self.edit_album_from_form(params)
+    if Artist.check_if_artist_exists(params) == true
+      new_album = Album.new(params)
+      return new_album
+    elsif Artist.check_if_artist_exists(params) == false
+      new_artist = Artist.new({ 'name' => params[:artist_id] })
+      new_artist.save()
+      params[:artist_id] = new_artist.id.to_i
+      new_album = Album.new(params)
+      return new_album
+    end
+  end
+
+end

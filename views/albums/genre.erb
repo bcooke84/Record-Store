@@ -6,10 +6,9 @@
 <input type="submit" value="Back to Inventory">
 </form>
 
-<h1> <%= @artist.name %>  </h1>
-<% albums = @artist.get_albums %>
+<h1> <%= @album.genre %>  </h1>
 
-<% albums.each do |album| %>
+<% @albums.each do |album| %>
 <img src= "<%= album.artwork %>"  width="150" height="150">
 <p>Title:         <%= album.title           %> </p>
 <p>Artist:        <%= album.get_artist.name %> </p>

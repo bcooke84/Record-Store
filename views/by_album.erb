@@ -68,16 +68,15 @@
     <hr/>
   </tr>
 
-<% @artists.each do |artist| %>
-<% albums = artist.get_albums %>
-<% albums.each do |album| %>
+  <% albums = Album.get_albums_by_album %>
+  <% albums.each do |album| %>
   <tr>
     <td>|</td>
-    <td><a href="/home/artists/<%=artist.id%>"><%= artist.name %></a></td>
+    <td><a href="/home/artists/<%=album.artist_id%>"><%= Artist.find_by_id(album.artist_id).name %></a></td>
     <td>|</td>
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
     <td>|</td>
-    <td><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
+    <td><%= album.genre %></td>
     <td>|</td>
     <td><%= album.year %></td>
     <td>|</td>
@@ -89,16 +88,15 @@
     <td>|</td>
     <td>
       <form action="/home/albums/<%= album.id %>/edit" method="get">
-      <input type="submit" value="Edit Record">
-    </form></td>
-    <td>|</td>
-    <td>
-      <form action="/home/albums/<%= album.id %>/delete" method="post">
-      <input type="submit" value="Delete Record">
-    </form></td>
-    <td>|</td>
-  </tr>
-  <% end %>
-<% end %>
-</table>
-<hr/>
+        <input type="submit" value="Edit Record">
+      </form></td>
+      <td>|</td>
+      <td>
+        <form action="/home/albums/<%= album.id %>/delete" method="post">
+          <input type="submit" value="Delete Record">
+        </form></td>
+        <td>|</td>
+      </tr>
+      <% end %>
+    </table>
+    <hr/>

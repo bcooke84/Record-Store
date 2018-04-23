@@ -8,7 +8,7 @@ require_relative( '../models/albums.rb' )
 # INDEX
 get '/home/albums' do
   @albums = Album.find_all()
-  erb(:"albums/index")
+  erb( :"albums/index" )
 end
 
 # NEW
@@ -16,13 +16,13 @@ get'/home/albums/new' do
   @albums = Album.find_all()
   @artists = Artist.find_all()
   @genres = Album.find_unique_genres()
-  erb(:'albums/new')
+  erb( :'albums/new' )
 end
 
 # SHOW
 get '/home/albums/:id' do
   @album = Album.find_by_id(params[:id])
-  erb(:'albums/show')
+  erb( :'albums/show' )
 end
 
 # IF THE ARTIST NAME MATCHES EXISTING ARTIST, CREATE A NEW ALBUM WITH THE album.artist_id() SET AS THE EXISTING ARTISTS ID.
@@ -32,15 +32,15 @@ end
 post '/home/albums' do
   @artists = Artist.find_all()
   Album.new_album_from_form(params)
-  redirect to '/home/albums'
-  end
+  redirect to '/home/inventory'
+end
 
 # EDIT
 get "/home/albums/:id/edit" do
   @album = Album.find_by_id(params[:id])
   @artists = Artist.find_all()
   @genres = Album.find_unique_genres()
-  erb(:'albums/edit')
+  erb( :'albums/edit' )
 end
 
 # UPDATE
@@ -55,4 +55,11 @@ post "/home/albums/:id/delete" do
   @album = Album.find_by_id(params[:id])
   @album.delete()
   redirect to '/home/inventory'
+end
+
+# GENRE
+get "/home/albums/:genre/by-genre" do
+  @albums = Album.get_albums_by_genre(params[:genre])
+  @album = @albums[0]
+  erb ( :'albums/genre')
 end

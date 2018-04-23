@@ -1,3 +1,7 @@
+<form action="/home/inventory" method="get">
+<input type="submit" value="Back to Inventory">
+</form>
+<br>
 <img src= "<%= @album.artwork %>"  width="150" height="150">
 <p>Title:         <%= @album.title           %> </p>
 <p>Artist:        <%= @album.get_artist.name %> </p>
@@ -6,7 +10,3 @@
 <p>Stock Level:   <%= @album.stock_level     %> </p>
 <p>Cost Price:   £<%= @album.cost_price      %> </p>
 <p>Store Price:  £<%= @album.store_price     %> </p>
-
-<form action="/home/inventory" method="get">
-<input type="submit" value="Back to Inventory">
-</form>

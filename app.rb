@@ -16,6 +16,14 @@ get '/home/inventory' do
   erb ( :inventory )
 end
 
+get '/home/inventory/by-album' do
+  erb ( :by_album )
+end
+
+get '/home/inventory/by-stock-level' do
+  erb ( :by_stock_level )
+end
+
 get '/home/stock-take' do
   @albums = Album.find_all()
   erb ( :stock_take )
