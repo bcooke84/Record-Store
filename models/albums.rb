@@ -102,4 +102,17 @@ class Album
     return total.round(2)
   end
 
-end
+  def self.new_album_from_form(params)
+    if Artist.check_if_artist_exists(params) == true
+      new_album = Album.new(params)
+      new_album.save()
+    elsif Artist.check_if_artist_exists(params) == false
+      new_artist = Artist.new({ 'name' => params[:artist_id] })
+      new_artist.save()
+      params[:artist_id] = new_artist.id.to_i
+      new_album = Album.new(params)
+      new_album.save()
+      boolean = true
+      end
+    end
+  end

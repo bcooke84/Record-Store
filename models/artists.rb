@@ -59,5 +59,16 @@ class Artist
     return artist_data.map { |artist| Artist.new(artist) }
   end
 
+  def self.check_if_artist_exists(params)
+    artists = Artist.find_all()
+    for artist in artists
+      if artist.name == params[:artist_id]
+        params[:artist_id] = artist.id.to_i
+        return true
+      end
+    end
+    return false
+  end
+
 
 end

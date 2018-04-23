@@ -31,29 +31,8 @@ end
 # CREATE
 post '/home/albums' do
   @artists = Artist.find_all()
-  boolean = true
-  for artist in @artists
-    if artist.name == params[:artist_id]
-      params[:artist_id] = artist.id.to_i
-      new_album = Album.new(params)
-      new_album.save()
-      boolean = true
-      redirect to '/home/albums'
-    elsif artist.name != params[:artist_id]
-      boolean = false
-    end
-  end
-  if boolean == false
-    new_artist = Artist.new({
-      'name' => params[:artist_id]
-      })
-      new_artist.save()
-      params[:artist_id] = new_artist.id.to_i
-      new_album = Album.new(params)
-      new_album.save()
-      boolean = true
-      redirect to '/home/albums'
-    end
+  Album.new_album_from_form(params)
+  redirect to '/home/albums'
   end
 
 # EDIT
