@@ -1,12 +1,13 @@
-<% @albums.each do |album| %>
-
- <img src= "<%= album.artwork %>"  width="150" height="150">
- <p>Title:        <%= album.title           %> </p>
- <p>Artist:       <%= album.get_artist.name %> </p>
- <p>Release Year: <%= album.year            %> </p>
- <p>Genre:        <%= album.genre           %> </p>
- <p>Stock Level:  <%= album.stock_level     %> </p>
- <p>Store Price:  <%= album.store_price     %> </p>
-
- <hr/>
-<% end %>
+<div class="grid">
+  <% @albums.each do |album| %>
+  <div class="cell" id="albums">
+    <img src= "<%= album.artwork %>"  width="200" height="200">
+    <p>Title:        <%= album.title           %> </p>
+    <p>Artist:       <%= album.get_artist.name %> </p>
+    <p>Release Year: <%= album.year            %> </p>
+    <p>Genre:        <%= album.genre           %> </p>
+    <p>Stock Level:  <%= album.stock_level     %> </p>
+    <p>Store Price:  <%= album.store_price     %> </p>
+  </div>
+  <% end %>
+</div>

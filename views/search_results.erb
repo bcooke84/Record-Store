@@ -1,0 +1,21 @@
+<p>hello</p>
+
+match_album = []
+for album in @albums
+if album.title.chomp.include? @params
+match_album.push(album)
+end
+
+match_artist = []
+for artist in @artists
+if album.title.chomp.include? @params
+match_artist.push(artist)
+end
+
+match_genre = []
+for genre in @genres
+if genre.chomp.includes? @params
+match_genre.push(genre)
+end
+
+for albums in match_album

@@ -28,3 +28,11 @@ get '/home/stock-take' do
   @albums = Album.find_all()
   erb ( :stock_take )
 end
+
+get '/home/search-result' do
+  @albums = Album.find_all()
+  @artists = Artist.find_all()
+  @genres = Album.find_unique_genres()
+  @search = params
+  erb ( :search_results )
+end
