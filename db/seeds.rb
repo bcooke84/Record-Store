@@ -11,7 +11,7 @@ artist1 = Artist.new({
   'name' => 'Arctic Monkeys'
   })
 artist2 = Artist.new({
-  'name' => 'Idelwild'
+  'name' => 'Idlewild'
   })
 artist3 = Artist.new({
   'name' => 'The Strokes'
@@ -133,6 +133,16 @@ album10 = Album.new({
   'store_price' => 12.49,
   'artist_id' => artist6.id
   })
+album11 = Album.new({
+  'title' => 'Favourite Worst Nightmare',
+  'stock_level' => 9,
+  'genre' => 'Indie',
+  'year' => 2007,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/a/ae/Favourite_Worst_Nightmare.jpg',
+  'cost_price' => 8.00,
+  'store_price' => 11.99,
+  'artist_id' => artist1.id
+  })
 
 album1.save()
 album2.save()
@@ -144,6 +154,7 @@ album7.save()
 album8.save()
 album9.save()
 album10.save()
+album11.save()
 
 # binding.pry
 # nil

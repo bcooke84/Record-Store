@@ -6,18 +6,19 @@
 <input type="submit" value="Back to Inventory">
 </form>
 
-<h1> <%= @artist.name %>  </h1>
+<h1 class="artist_name"> <%= @artist.name %>  </h1>
 <% albums = @artist.get_albums %>
 
-<% albums.each do |album| %>
-<img src= "<%= album.artwork %>"  width="150" height="150">
-<p>Title:         <%= album.title           %> </p>
-<p>Artist:        <%= album.get_artist.name %> </p>
-<p>Release Year:  <%= album.year            %> </p>
-<p>Genre:         <%= album.genre           %> </p>
-<p>Stock Level:   <%= album.stock_level     %> </p>
-<p>Store Price:   <%= album.store_price     %> </p>
-
-<% end %>
-
-<hr/>
+<div class="artist_album_container">
+  <% albums.each do |album| %>
+  <div class="artist_album_cell" id="albums">
+    <img src= "<%= album.artwork %>"  width="200" height="200">
+    <p>Title:        <%= album.title           %> </p>
+    <p>Artist:       <%= album.get_artist.name %> </p>
+    <p>Release Year: <%= album.year            %> </p>
+    <p>Genre:        <%= album.genre           %> </p>
+    <p>Stock Level:  <%= album.stock_level     %> </p>
+    <p>Store Price:  <%= album.store_price     %> </p>
+  </div>
+  <% end %>
+</div>

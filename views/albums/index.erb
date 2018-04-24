@@ -1,6 +1,6 @@
-<div class="grid">
+<div class="album_container">
   <% @albums.each do |album| %>
-  <div class="cell" id="albums">
+  <div class="album_cell" id="albums">
     <img src= "<%= album.artwork %>"  width="200" height="200">
     <p>Title:        <%= album.title           %> </p>
     <p>Artist:       <%= album.get_artist.name %> </p>

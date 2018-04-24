@@ -1,5 +1,6 @@
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
+  color: black;
   background-color: whitesmoke;
 }
 
@@ -11,19 +12,21 @@ input[type=text] {
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.grid {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  word-break: break-all;
+a:link {
+    color: black;
 }
 
-.cell {
-  padding: 10px;
-  margin: 10px;
-  text-align: left;
-  display: inline-block;
-  width: 250px;
-  word-break: normal;
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: darkgray;
+}
+
+/* selected link */
+a:active {
+    color: black;
 }

@@ -1,0 +1,19 @@
+.album_container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-break: normal;
+  /* padding-left: 200px;
+  padding-right: 2000px; */
+}
+
+.album_cell {
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+  display: inline-block;
+  width: 200px;
+  word-break: normal;
+  flex-grow: 1;
+}

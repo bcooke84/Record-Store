@@ -1,0 +1,15 @@
+.artist_container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.artist_cell {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+  word-break: normal;
+}

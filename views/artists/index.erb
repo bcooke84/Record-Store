@@ -1,10 +1,10 @@
+<div class ="artist_container">
 <% @artists.each do |artist| %>
- <p>Artist:  <%= artist.name %> </p>
-
- <form action="/home/artists/<%= artist.id %>" method="get">
- <input type="submit" value="Show All Albums">
- </form>
-
- <hr/>
-
+<div class="artist_cell">
+  <p> <%= artist.name %> </p>
+  <form action="/home/artists/<%= artist.id %>" method="get">
+    <input type="submit" value="Show All Albums">
+  </form>
+</div>
 <% end %>
+</div>
