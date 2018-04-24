@@ -3,25 +3,35 @@
   padding: 8px;
 }
 
-.inventory tr:nth-child(even){background-color: #f2f2f2;}
+.inventory tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-.inventory tr:hover {background-color: #ddd;}
+.inventory tr:hover {
+  background-color: #ddd;
+}
 
-.inventory th {
+.inventory th, .stock_take {
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: darkgray;
-  color: white;
+  background-color: lightgray;
+  color: whitesmoke;
+  font-weight: normal;
 }
 
 .inventory_table {
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 
 .centre {
   text-align: center;
+  width: 100px;
+}
+
+.centre_narrow {
+  text-align: center;
+  width: 75px;
 }
 
 .left {

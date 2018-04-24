@@ -16,17 +16,14 @@ a:link {
     color: black;
 }
 
-/* visited link */
 a:visited {
     color: black;
 }
 
-/* mouse over link */
 a:hover {
     color: darkgray;
 }
 
-/* selected link */
 a:active {
     color: black;
 }
