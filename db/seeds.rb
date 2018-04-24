@@ -65,8 +65,8 @@ album3 = Album.new({
   })
 album4 = Album.new({
   'title' => 'Whatever People Say I Am, That\'s What I\'m Not',
-  'stock_level' => 50,
-  'genre' => 'Hip-Hop',
+  'stock_level' => 8,
+  'genre' => 'Indie',
   'year' => 2006,
   'artwork' => 'https://upload.wikimedia.org/wikipedia/en/5/5f/Whatever_People_Say_I_Am%2C_That%27s_What_I%27m_Not.jpg',
   'cost_price' => 8.55,
@@ -75,7 +75,7 @@ album4 = Album.new({
   })
 album5 = Album.new({
   'title' => 'AM',
-  'stock_level' => 25,
+  'stock_level' => 11,
   'genre' => 'Indie',
   'year' => 2013,
   'artwork' => 'https://upload.wikimedia.org/wikipedia/en/0/04/Arctic_Monkeys_-_AM.png',
@@ -85,7 +85,7 @@ album5 = Album.new({
   })
 album6 = Album.new({
   'title' => 'Is This It',
-  'stock_level' => 14,
+  'stock_level' => 4,
   'genre' => 'Indie',
   'year' => 2001,
   'artwork' => 'https://upload.wikimedia.org/wikipedia/en/0/09/The_Strokes_-_Is_This_It_cover.png',
@@ -125,7 +125,7 @@ album9 = Album.new({
   })
 album10 = Album.new({
   'title' => 'Life After Death',
-  'stock_level' => 10,
+  'stock_level' => 4,
   'genre' => 'Hip-Hop',
   'year' => 1997,
   'artwork' => 'https://upload.wikimedia.org/wikipedia/en/1/1c/NotoriousB.I.G.LifeAfterDeath.jpg',

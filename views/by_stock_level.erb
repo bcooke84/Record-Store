@@ -1,102 +1,69 @@
-<form action="/home/albums/new" method="get">
- <input type="submit" value="Add New Record">
+<form class="add_button_box" action="/home/albums/new" method="get">
+ <input class="add_button" type="submit" value="Add New Record">
 </form>
-<br>
-
-<form action="/home/inventory" method="get">
- <input type="submit" value="Sort by Artist">
-</form>
-
-<form action="/home/inventory/by-album" method="get">
- <input type="submit" value="Sort by Album">
-</form>
-
-<form action="/home/inventory/by-stock-level" method="get">
- <input type="submit" value="Sort by Stock Level">
-</form>
-<br>
-
-<!-- STOCK TAKE TABLE -->
-
-<table>
-  <tr>
-    <th></th>
-    <th>Total Album Stock:</th>
-    <th></th>
-    <th>Total Album Cost Value</th>
-    <th></th>
-    <th>Total Album Store Value</th>
-    <th></th>
-  </tr>
-
-  <tr>
-    <td>|</td>
-    <td><%=Album.total_album_stock_level%></td>
-    <td>|</td>
-    <td>£ <%=Album.total_album_cost_price%></td>
-    <td>|</td>
-    <td>£ <%=Album.total_album_store_price%></td>
-    <td>|</td>
-  </tr>
-
-</table>
-<br>
 
 <!-- INVENTORY TABLE -->
 
-<table>
+<div class="inventory_table">
+<table class="inventory">
+
   <tr>
-    <th></th>
-    <th>Artist</th>
-    <th></th>
-    <th>Album</th>
-    <th></th>
+    <th class="left"><a href="/home/inventory">Artist</th>
+    <th class="left"><a href="/home/inventory/by-album">Album</th>
     <th>Genre</th>
-    <th></th>
     <th>Release Year</th>
-    <th></th>
     <th>Cost Price</th>
-    <th></th>
     <th>Store Price</th>
-    <th></th>
-    <th>Stock Level</th>
-    <th></th>
+    <th><a class="stock_level_header" href="/home/inventory/by-stock-level">Stock Level</a></th>
     <th>Edit</th>
-    <th></th>
     <th>Delete</th>
-    <th></th>
-    <hr/>
   </tr>
 
   <% albums = Album.get_albums_by_stock_level %>
   <% albums.each do |album| %>
   <tr>
-    <td>|</td>
     <td><a href="/home/artists/<%=album.artist_id%>"><%= Artist.find_by_id(album.artist_id).name %></a></td>
-    <td>|</td>
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
-    <td>|</td>
-    <td><%= album.genre %></td>
-    <td>|</td>
-    <td><%= album.year %></td>
-    <td>|</td>
-    <td><%= album.cost_price %></td>
-    <td>|</td>
-    <td><%= album.store_price %></td>
-    <td>|</td>
-    <td><%= album.stock_level %></td>
-    <td>|</td>
-    <td>
+    <td class="centre_narrow"><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
+    <td class="centre_narrow"><%= album.year %></td>
+    <td class="centre"><%= album.cost_price %></td>
+    <td class="centre"><%= album.store_price %></td>
+    <td class="centre_<%=album.stock_level_warning%>"><%= album.stock_level %></td>
+    <td class="centre_narrow">
       <form action="/home/albums/<%= album.id %>/edit" method="get">
-        <input type="submit" value="Edit Record">
-      </form></td>
-      <td>|</td>
-      <td>
-        <form action="/home/albums/<%= album.id %>/delete" method="post">
-          <input type="submit" value="Delete Record">
-        </form></td>
-        <td>|</td>
-      </tr>
-      <% end %>
-    </table>
-    <hr/>
+      <input type="submit" value="Edit Record">
+    </form></td>
+    <td class="centre_narrow">
+      <form action="/home/albums/<%= album.id %>/delete" method="post">
+      <input type="submit" value="Delete Record">
+    </form></td>
+  </tr>
+  <% end %>
+
+<!-- STOCK TAKE TABLE -->
+
+<tr>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <th>Total Album Cost Value</th>
+  <th>Total Album Store Value</th>
+  <th>Total Album Stock</th>
+  <td class="blank"></td>
+  <td class="blank"></td>
+</tr>
+<tr>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <td class="blank"></td>
+  <td class="centre">£ <%=Album.total_album_cost_price%></td>
+  <td class="centre">£ <%=Album.total_album_store_price%></td>
+  <td class="centre"><%=Album.total_album_stock_level%></td>
+  <td class="blank"></td>
+  <td class="blank"></td>
+</tr>
+
+</table>
+</div>

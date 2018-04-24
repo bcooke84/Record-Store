@@ -4,26 +4,50 @@ body {
   background-color: whitesmoke;
 }
 
-input[type=submit], input[type=text] {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-}
-
-input[type=text] {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-}
-
 a:link {
-    color: black;
+  color: black;
 }
 
 a:visited {
-    color: black;
+  color: black;
 }
 
 a:hover {
-    color: darkgray;
+  color: darkgray;
 }
 
 a:active {
-    color: black;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+  width: 200px;
+  background-color: whitesmoke;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: lightgray;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+form.search_container {
+  padding-right: 15px;
 }

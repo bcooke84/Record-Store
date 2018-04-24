@@ -3,7 +3,7 @@
 </form>
 
 <form action="/home/inventory" method="get">
-<input type="submit" value="Back to Inventory">
+  <input type="submit" value="Back to Inventory">
 </form>
 
 <h1 class="artist_name"> <%= @artist.name %>  </h1>
@@ -13,7 +13,7 @@
   <% albums.each do |album| %>
   <div class="artist_album_cell" id="albums">
     <img src= "<%= album.artwork %>"  width="200" height="200">
-    <p class="title_width">Title:        <%= album.title           %> </p>
+    <p class="title">Title:        <%= album.title           %> </p>
     <p>Artist:       <%= album.get_artist.name %> </p>
     <p>Release Year: <%= album.year            %> </p>
     <p>Genre:        <%= album.genre           %> </p>

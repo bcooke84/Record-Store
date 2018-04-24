@@ -1,5 +1,5 @@
 .inventory td, .inventory th {
-  border: 1px solid #ddd;
+  border: 1px solid lightgray;
   padding: 8px;
 }
 
@@ -8,25 +8,44 @@
 }
 
 .inventory tr:hover {
-  background-color: #ddd;
+  background-color: lightgray;
 }
 
-.inventory th, .stock_take {
+.inventory th {
   padding-top: 12px;
   padding-bottom: 12px;
   background-color: lightgray;
-  color: whitesmoke;
+  color: black;
   font-weight: normal;
 }
 
 .inventory_table {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .centre {
   text-align: center;
   width: 100px;
+}
+
+td.centre_LOW {
+  text-align: center;
+  width: 100px;
+  background-color: lightcoral;
+}
+
+td.centre_MEDIUM {
+  text-align: center;
+  width: 100px;
+  background-color: moccasin;
+}
+
+td.centre_HIGH {
+  text-align: center;
+  width: 100px;
+  background-color: darkseagreen;
 }
 
 .centre_narrow {
@@ -36,4 +55,44 @@
 
 .left {
   text-align: left;
+}
+
+td.blank {
+  border: 0px !important;
+  background-color: whitesmoke;
+}
+
+input.add_button {
+  background: lightgray;
+  color: black;
+  border-color: black;
+  height: 100px;
+  width: 150px;
+  font-size: 15px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+
+}
+
+form.add_button_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.inventory_table {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+a.stock_level_header {
+  background-color: darkgray;
+}
+
+a.album_header {
+  background-color: darkgray;
+}
+
+a.artist_header {
+  background-color: darkgray;
 }
