@@ -51,6 +51,16 @@ form.search_container {
   padding-right: 15px;
 }
 
-.search_bar {
+.search_bar_button, .search_bar_input {
   font-family: 'Barlow Semi Condensed', sans-serif;
+  padding: 1px;
+}
+
+.search_bar_button {
+  width: 60px;
+}
+
+.search_bar_input {
+  width: 120px;
+  height: 25px;
 }

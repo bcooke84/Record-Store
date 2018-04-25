@@ -167,7 +167,6 @@ class Album
 
     def self.search_albums(params)
       sql = "SELECT * FROM albums WHERE lower(title) LIKE $1;"
-      params.downcase
       params = "%" + params + "%"
       values = [params]
       results = SqlRunner.run(sql, values)

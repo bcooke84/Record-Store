@@ -55,6 +55,7 @@ end
 post "/home/albums/:id/delete" do
   @album = Album.find_by_id(params[:id])
   @album.delete()
+  Artist.remove_artists_without_albums()
   redirect to '/home/inventory'
 end
 
