@@ -1,29 +1,27 @@
 .form {
-  padding-top: 30px;
+  padding-top: 50px;
   display:flex;
-  justify-content: space-between;
-  padding-left: 15px;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  justify-content: center;
+}
+
+ul.edit_list {
+  width: 35%;
+  padding-left: 10px;
 }
 
 .form-row {
   display: flex;
-  justify-content: flex-end;
   padding: 2px;
 }
-.form-row > label {
-  padding: .5em 1em .5em 0;
+
+.form-row > input {
   flex: 1;
-  text-align: left;
-}
-.form-row > input {
-  flex: 2;
-}
-.form-row > input {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: black;
   padding: 10px;
+  font-size: 12px;
 }
 
-ul.edit_list {
-  width: 40%;
-  padding-left: 10px;
+::placeholder {
+  color: black;
 }

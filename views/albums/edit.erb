@@ -9,7 +9,6 @@
   record. -->
   <ul class="edit_list">
     <li class="form-row">
-      <label for="artist_id">Artist:</label>
       <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>" required/>
       <datalist id="artist_list">
         <%@artists.each do |artist| %>
@@ -19,12 +18,10 @@
     </li>
 
     <li class="form-row">
-      <label for="title">Title:</label>
       <input type="text" id="title" name="title" value="<%= @album.title %>" required>
     </li>
 
     <li class="form-row">
-      <label for="genre">Genre:</label>
       <input list="genre_list" name="genre" value="<%= @album.genre %>"/>
       <datalist id="genre_list">
         <%@genres.each do |genre| %>
@@ -34,28 +31,23 @@
     </li>
 
     <li class="form-row">
-      <label for="year">Release Year:</label>
       <input type="text" id="year" name="year" value="<%= @album.year %>">
     </li>
 
     <li class="form-row">
-      <label for="artwork">Artwork:</label>
       <input type="text" id="artwork" name="artwork" value="<%= @album.artwork%>">
     </li>
 
     <li class="form-row">
-      <label for="cost_price">Cost Price:</label>
-      <input type="number" id="cost_price" name="cost_price" step="0.01" value="<%= @album.cost_price %>">
+      <input type="number" id="cost_price" name="cost_price" step="0.01" value="<%= @album.cost_price %>" min="0.00">
     </li>
 
     <li class="form-row">
-      <label for="store_price">Store Price:</label>
-      <input type="number" name="store_price" step="0.01" value="<%= @album.store_price %>">
+      <input type="number" name="store_price" step="0.01" value="<%= @album.store_price %>" min="0.00">
     </li>
 
     <li class="form-row">
-      <label for="stock_level">Stock Level:</label>
-      <input type="number" name="stock_level" value="<%= @album.stock_level %>">
+      <input type="number" name="stock_level" value="<%= @album.stock_level %>" min="0">
     </li>
 
     <li class="form-row">
