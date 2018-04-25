@@ -14,9 +14,3 @@
   width: 200px;
   word-break: normal;
 }
-
-h1.no_result {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}

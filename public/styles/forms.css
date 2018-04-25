@@ -23,9 +23,10 @@
   padding: 10px;
 }
 .form-row > button {
- background: darkgray;
- color: whitesmoke;
- border: 10px;
+  background: darkgray;
+  color: whitesmoke;
+  border: 10px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 ul.edit_list {

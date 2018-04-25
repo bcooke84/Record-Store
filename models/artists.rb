@@ -1,5 +1,6 @@
 require_relative( '../db/sql_runner.rb' )
 require_relative( 'albums.rb' )
+require('pry-byebug')
 
 class Artist
 
@@ -78,20 +79,23 @@ class Artist
     artists = Artist.find_all()
     artist_array = []
     for artist in artists
-      if artist.get_albums.count == 0
+      if artist.get_albums.count < 1
         artist_array.push (artist)
         return artist_array
       end
     end
+  return false
   end
 
   # METHOD BELOW FOR DELETING ARTIST OBJECT IF IT HAS
   # NO ASSIGNED ALBUMS
 
   def self.remove_artists_without_albums()
-    result = Artist.check_all_artists_have_album()
-    if result.count > 0
-      result[0].delete()
+    results = Artist.check_all_artists_have_album()
+    if results != false
+      for result in results
+        result.delete
+      end
     end
   end
 

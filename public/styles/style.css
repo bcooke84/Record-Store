@@ -50,3 +50,7 @@ li a:hover:not(.active) {
 form.search_container {
   padding-right: 15px;
 }
+
+.search_bar {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
