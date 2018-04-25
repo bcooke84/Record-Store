@@ -1,8 +1,11 @@
-
-
-<div class="search_album_container">
+<% if @albums.count == 0 %>
+<div>
+  <h1 class="no_result">NO RESULTS FOUND</h1>
+</div>
+<% else %>
+<div class="search_container">
 <% @albums.each do |album| %>
-<div class="search_album_cell">
+<div class="search_cell">
   <img src= "<%= album.artwork %>"  width="200" height="200">
   <p>Title:         <%= album.title           %> </p>
   <p>Artist:        <%= album.get_artist.name %> </p>
@@ -13,3 +16,4 @@
 </div>
 <% end %>
 </div>
+<%end%>

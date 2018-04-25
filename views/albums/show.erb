@@ -1,8 +1,8 @@
+<h1 class="title_single"><%= @album.title%> </h1>
+  <div class="album_container_single">
 
-<div class="album_container_single">
-  <h1 class="title_single"><%= @album.title%> </h1>
   <div class="album_cell_single">
-    <img src= "<%= @album.artwork %>"  width="150" height="150">
+    <img src= "<%= @album.artwork %>"  width="200" height="200">
     <p>Artist:        <%= @album.get_artist.name %> </p>
     <p>Release Year:  <%= @album.year            %> </p>
     <p>Genre:         <%= @album.genre           %> </p>
