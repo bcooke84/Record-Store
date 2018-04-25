@@ -25,6 +25,15 @@ artist5 = Artist.new({
 artist6 = Artist.new({
   'name' => 'The Notorious B.I.G'
   })
+artist7 = Artist.new({
+  'name' => 'Underworld'
+  })
+artist8 = Artist.new({
+  'name' => 'Run The Jewels'
+  })
+artist9 = Artist.new({
+  'name' => 'Niteworks'
+  })
 
 artist1.save()
 artist2.save()
@@ -32,6 +41,9 @@ artist3.save()
 artist4.save()
 artist5.save()
 artist6.save()
+artist7.save()
+artist8.save()
+artist9.save()
 
 album1 = Album.new({
   'title' => 'Humbug',
@@ -96,7 +108,7 @@ album6 = Album.new({
 album7 = Album.new({
   'title' => 'Discovery',
   'stock_level' => 17,
-  'genre' => 'Dance',
+  'genre' => 'Electronic',
   'year' => 2001,
   'artwork' => 'https://upload.wikimedia.org/wikipedia/en/a/ae/Daft_Punk_-_Discovery.jpg',
   'cost_price' => 8.97,
@@ -143,6 +155,36 @@ album11 = Album.new({
   'store_price' => 11.99,
   'artist_id' => artist1.id
   })
+album12 = Album.new({
+  'title' => 'dubnobasswithmyheadman',
+  'stock_level' => 5,
+  'genre' => 'Electronic',
+  'year' => 1994,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/b/b4/Underworld.dubnobasswithmyheadman.jpg',
+  'cost_price' => 7.60,
+  'store_price' => 11.99,
+  'artist_id' => artist7.id
+  })
+album13 = Album.new({
+  'title' => 'Run The Jewels 3',
+  'stock_level' => 11,
+  'genre' => 'Hip-Hop',
+  'year' => 2016,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/9/96/RunTheJewels3.jpg',
+  'cost_price' => 7.65,
+  'store_price' => 11.49,
+  'artist_id' => artist8.id
+  })
+album14 = Album.new({
+  'title' => 'NW',
+  'stock_level' => 9,
+  'genre' => 'Electronic',
+  'year' => 2015,
+  'artwork' => 'https://f4.bcbits.com/img/a0322225427_10.jpg',
+  'cost_price' => 6.65,
+  'store_price' => 10.99,
+  'artist_id' => artist9.id
+  })
 
 album1.save()
 album2.save()
@@ -155,6 +197,9 @@ album8.save()
 album9.save()
 album10.save()
 album11.save()
+album12.save()
+album13.save()
+album14.save()
 
 # binding.pry
 # nil

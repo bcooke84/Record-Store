@@ -1,15 +1,10 @@
-<form action="/home/artists" method="get">
-  <input type="submit" value="Back to Artists">
-</form>
 
-<form action="/home/inventory" method="get">
-  <input type="submit" value="Back to Inventory">
-</form>
 
 <h1 class="artist_name"> <%= @artist.name %>  </h1>
 <% albums = @artist.get_albums %>
 
 <div class="artist_album_container">
+
   <% albums.each do |album| %>
   <div class="artist_album_cell" id="albums">
     <img src= "<%= album.artwork %>"  width="200" height="200">

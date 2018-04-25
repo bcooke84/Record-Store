@@ -43,9 +43,8 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: lightgray;
+  background-color: darkgray;
   color: whitesmoke;
-  font-weight: bold;
 }
 
 form.search_container {

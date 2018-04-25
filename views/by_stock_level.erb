@@ -8,15 +8,15 @@
 <table class="inventory">
 
   <tr>
-    <th class="left"><a href="/home/inventory">Artist</th>
-    <th class="left"><a href="/home/inventory/by-album">Album</th>
-    <th>Genre</th>
-    <th>Release Year</th>
-    <th>Cost Price</th>
-    <th>Store Price</th>
-    <th><a class="stock_level_header" href="/home/inventory/by-stock-level">Stock Level</a></th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th class="left"><a href="/home/inventory"> Artist </th>
+    <th class="left"><a href="/home/inventory/by-album"> Album </th>
+    <th> Genre </th>
+    <th> Release Year </th>
+    <th> Cost Price (£) </th>
+    <th> Store Price (£) </th>
+    <th><a class="stock_level_header" href="/home/inventory/by-stock-level"> Stock Level </a></th>
+    <th> Edit </th>
+    <th> Delete </th>
   </tr>
 
   <% albums = Album.get_albums_by_stock_level %>
@@ -47,9 +47,9 @@
   <td class="blank"></td>
   <td class="blank"></td>
   <td class="blank"></td>
-  <th>Total Album Cost Value</th>
-  <th>Total Album Store Value</th>
-  <th>Total Album Stock</th>
+  <th> Total Album Cost Value (£) </th>
+  <th> Total Album Store Value (£) </th>
+  <th> Total Album Stock </th>
   <td class="blank"></td>
   <td class="blank"></td>
 </tr>
@@ -58,9 +58,9 @@
   <td class="blank"></td>
   <td class="blank"></td>
   <td class="blank"></td>
-  <td class="centre">£ <%=Album.total_album_cost_price%></td>
-  <td class="centre">£ <%=Album.total_album_store_price%></td>
-  <td class="centre"><%=Album.total_album_stock_level%></td>
+  <td class="centre"> <%=Album.total_album_cost_price  %> </td>
+  <td class="centre"> <%=Album.total_album_store_price %> </td>
+  <td class="centre"> <%=Album.total_album_stock_level %> </td>
   <td class="blank"></td>
   <td class="blank"></td>
 </tr>

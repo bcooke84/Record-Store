@@ -1,47 +1,66 @@
-<form action="/home/albums/<%= @album.id %>" method="post" autocomplete="off">
+<form class="form" action="/home/albums/<%= @album.id %>" method="post" autocomplete="off">
 
-<!-- # EDIT PAGE.
-Artist field to show string with artist name but needs to convert
-to artist_id before updating.
-If this is a new artist, it needs to create a new artist
-entry in database, and update existing album record.
-If this is an existing artist, it only needs to update the existing album
-record. -->
+  <!-- # EDIT PAGE.
+  Artist field to show string with artist name but needs to convert
+  to artist_id before updating.
+  If this is a new artist, it needs to create a new artist
+  entry in database, and update existing album record.
+  If this is an existing artist, it only needs to update the existing album
+  record. -->
+  <ul class="edit_list">
+    <li class="form-row">
+      <label for="artist_id">Artist:</label>
+      <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>"/>
+      <datalist id="artist_list">
+        <%@artists.each do |artist| %>
+        <option value= "<%=artist.name%>"><%=artist.name%> </option>
+        <%end%>
+      </datalist>
+    </li>
 
-  <label for="artist_id">Artist:</label>
-  <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>"/>
-  <datalist id="artist_list">
-    <%@artists.each do |artist| %>
-    <option value= "<%=artist.name%>"><%=artist.name%> </option>
-    <%end%>
-  </datalist> <br>
+    <li class="form-row">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" value="<%= @album.title %>">
+    </li>
 
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title" value="<%= @album.title %>"></br>
+    <li class="form-row">
+      <label for="genre">Genre:</label>
+      <input list="genre_list" name="genre" value="<%= @album.genre %>"/>
+      <datalist id="genre_list">
+        <%@genres.each do |genre| %>
+        <option value= "<%=genre["genre"]%>"  ></option>
+        <%end%>
+      </datalist>
+    </li>
 
-  <label for="genre">Genre:</label>
-  <input list="genre_list" name="genre" value="<%= @album.genre %>"/>
-  <datalist id="genre_list">
-    <%@genres.each do |genre| %>
-    <option value= "<%=genre["genre"]%>"  ></option>
-    <%end%>
-  </datalist><br>
+    <li class="form-row">
+      <label for="year">Release Year:</label>
+      <input type="text" id="year" name="year" value="<%= @album.year %>">
+    </li>
 
-  <label for="year">Release Year:</label>
-  <input type="text" id="year" name="year" value="<%= @album.year %>"></br>
+    <li class="form-row">
+      <label for="artwork">Artwork:</label>
+      <input type="text" id="artwork" name="artwork" value="<%= @album.artwork%>">
+    </li>
 
-  <label for="artwork">Artwork:</label>
-  <input type="text" id="artwork" name="artwork" value="<%= @album.artwork%>"></br>
+    <li class="form-row">
+      <label for="cost_price">Cost Price:</label>
+      <input type="number" id="cost_price" name="cost_price" step="0.01" value="<%= @album.cost_price %>">
+    </li>
 
-  <label for="cost_price">Cost Price:</label>
-  <input type="number" id="cost_price" name="cost_price" step="0.01" value="<%= @album.cost_price %>"></br>
+    <li class="form-row">
+      <label for="store_price">Store Price:</label>
+      <input type="number" name="store_price" step="0.01" value="<%= @album.store_price %>">
+    </li>
 
-  <label for="store_price">Store Price:</label>
-  <input type="number" id="store_price" name="store_price" step="0.01" value="<%= @album.store_price %>"></br>
+    <li class="form-row">
+      <label for="stock_level">Stock Level:</label>
+      <input type="number" name="stock_level" value="<%= @album.stock_level %>">
+    </li>
 
-  <label for="stock_level">Stock Level:</label>
-  <input type="number" id="stock_level" name="stock_level" value="<%= @album.stock_level %>"></br>
+    <li class="form-row">
+      <input type="submit" value="Save Changes">
+    </li>
 
-  <input type="submit" value="Save Changes" class="edit_save">
-
+  </ul>
 </form>

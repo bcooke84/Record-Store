@@ -1,0 +1,21 @@
+.album_container_single {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  word-break: normal;
+  justify-content:center;
+  align-content: center;
+  padding-top: 10px;
+}
+
+.album_cell_single {
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+  width: 200px;
+  word-break: normal;
+}
+
+p.title_single {
+  width: 200px;
+}

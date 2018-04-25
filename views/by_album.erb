@@ -12,8 +12,8 @@
     <th class="left"><a class="album_header" href="/home/inventory/by-album">Album</th>
     <th>Genre</th>
     <th>Release Year</th>
-    <th>Cost Price</th>
-    <th>Store Price</th>
+    <th>Cost Price (£)</th>
+    <th>Store Price (£)</th>
     <th><a href="/home/inventory/by-stock-level">Stock Level</a></th>
     <th>Edit</th>
     <th>Delete</th>
@@ -47,8 +47,8 @@
     <td class="blank"></td>
     <td class="blank"></td>
     <td class="blank"></td>
-    <th>Total Album Cost Value</th>
-    <th>Total Album Store Value</th>
+    <th>Total Album Cost Value (£)</th>
+    <th>Total Album Store Value (£)</th>
     <th>Total Album Stock</th>
     <td class="blank"></td>
     <td class="blank"></td>
@@ -58,9 +58,9 @@
     <td class="blank"></td>
     <td class="blank"></td>
     <td class="blank"></td>
-    <td class="centre">£ <%=Album.total_album_cost_price%></td>
-    <td class="centre">£ <%=Album.total_album_store_price%></td>
-    <td class="centre"><%=Album.total_album_stock_level%></td>
+    <td class="centre"> <%=Album.total_album_cost_price%> </td>
+    <td class="centre"> <%=Album.total_album_store_price%> </td>
+    <td class="centre"> <%=Album.total_album_stock_level%> </td>
     <td class="blank"></td>
     <td class="blank"></td>
   </tr>
