@@ -98,11 +98,12 @@ class Artist
   # SEARCH ARTIST NAMES FOR SEARCH STRING
 
   def self.search_artists(params)
-    sql = "SELECT * FROM artists WHERE name LIKE $1;"
+    sql = "SELECT * FROM artists WHERE lower(name) LIKE $1;"
+    params.downcase
     params = "%" + params + "%"
     values = [params]
     results = SqlRunner.run(sql, values)
-    return Artist.map_artits(results)
+    return Artist.map_artists(results)
   end
 
 

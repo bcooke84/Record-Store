@@ -23,11 +23,11 @@ end
 get '/home/search-result/artists' do
   search_artists = params[:search_artists]
   @artists = Artist.search_artists(search_artists)
-  erb ( :search_results )
+  erb ( :search_results_artists )
 end
 
 get '/home/search-result/albums' do
   search_albums = params[:search_albums]
   @albums = Album.search_albums(search_albums)
-  erb ( :search_results )
+  erb ( :search_results_albums )
 end
