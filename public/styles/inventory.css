@@ -88,14 +88,10 @@ form.add_button_box {
   padding-left: 20px;
 }
 
-a.stock_level_header {
+a.stock_level_header, a.album_header, a.artist_header {
   background-color: darkgray;
 }
 
-a.album_header {
-  background-color: darkgray;
-}
-
-a.artist_header {
-  background-color: darkgray;
+a.stock_level_header:hover, a.album_header:hover, a.artist_header:hover {
+  color: whitesmoke;
 }

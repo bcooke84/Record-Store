@@ -71,4 +71,39 @@ class Artist
   end
 
 
+  # METHOD BELOW FOR CHECKING IF AN EDITED ARTIST NAME RESULTS IN
+  # AN ARTIST WITH NO ASSIGNED ALBUMS
+
+  def self.check_all_artists_have_album()
+    artists = Artist.find_all()
+    artist_array = []
+    for artist in artists
+      if artist.get_albums.count == 0
+        artist_array.push (artist)
+        return artist_array
+      end
+    end
+  end
+
+  # METHOD BELOW FOR DELETING ARTIST OBJECT IF IT HAS
+  # NO ASSIGNED ALBUMS
+
+  def self.remove_artists_without_albums()
+    result = Artist.check_all_artists_have_album()
+    if result.count > 0
+      result[0].delete()
+    end
+  end
+
+  # SEARCH ARTIST NAMES FOR SEARCH STRING
+
+  def self.search_artists(params)
+    sql = "SELECT * FROM artists WHERE name LIKE $1;"
+    params = "%" + params + "%"
+    values = [params]
+    results = SqlRunner.run(sql, values)
+    return Artist.map_artits(results)
+  end
+
+
 end

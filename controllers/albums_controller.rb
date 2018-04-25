@@ -47,6 +47,7 @@ end
 post "/home/albums/:id" do
   @album = Album.edit_album_from_form(params)
   @album.update()
+  Artist.remove_artists_without_albums()
   redirect to '/home/inventory'
 end
 

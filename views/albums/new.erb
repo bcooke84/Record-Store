@@ -3,7 +3,7 @@
   <ul class="edit_list">
     <li class="form-row">
       <label for="artist_id">Artist:</label>
-      <input list="artist_list" name="artist_id"/>
+      <input list="artist_list" name="artist_id" required/>
       <datalist id="artist_list">
         <%@artists.each do |artist| %>
         <option value= "<%=artist.name%>"><%=artist.name%> </option>
@@ -13,7 +13,7 @@
 
     <li class="form-row">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title"></br>
+      <input type="text" id="title" name="title" required></br>
     </li>
 
     <li class="form-row">

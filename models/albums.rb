@@ -1,6 +1,8 @@
 require_relative( '../db/sql_runner.rb' )
 require_relative( 'artists.rb' )
 
+require('pry-byebug')
+
 class Album
 
   attr_reader :id
@@ -71,6 +73,13 @@ class Album
     return Artist.map_artists(result).first()
   end
 
+
+  def self.map_albums(albums_data)
+    return albums_data.map { |album| Album.new(album) }
+  end
+
+  # SORTED SQL QUERIES FOR SORT FUNTION ON INVENTORY TABLE
+
   def self.get_albums_by_album()
     sql = "SELECT * FROM albums ORDER BY title;"
     result = SqlRunner.run(sql)
@@ -90,15 +99,16 @@ class Album
     return Album.map_albums(result)
   end
 
-  def self.map_albums(albums_data)
-    return albums_data.map { |album| Album.new(album) }
-  end
+# RETURNS ONLY THE UNIQUE GENRES FROM DATABASE SO THAT THE GENRE FORM FIELD
+# DOES NOT INCLUDE DUPLICATES
 
   def self.find_unique_genres()
     sql = "SELECT DISTINCT genre FROM albums ORDER BY genre;"
     result = SqlRunner.run(sql)
     return result
   end
+
+# DETERMINE THE STOCK LEVEL FOR CSS COLOURING ON INVENTORY PAGE IN WEB APP
 
   def self.total_album_stock_level()
     albums = self.find_all()
@@ -121,6 +131,9 @@ class Album
     return total.round(2)
   end
 
+  # CREATES A NEW ALBUM OBJECT IF ARTIST ALREADY EXITSTS
+  # CREATES A NEW ARTIST OBJECT PRIOR TO THE ALBUM OBJECT IF ITS A NEW ARTIST
+
   def self.new_album_from_form(params)
     if Artist.check_if_artist_exists(params) == true
       new_album = Album.new(params)
@@ -134,6 +147,9 @@ class Album
     end
   end
 
+  # CREATES A NEW ALBUM OBJECT TO BE UPDATED IF ALBUM DETAILS ARE EDITED
+  # CREATES A NEW ARTIST OBJECT PRIOR TO THE ALBUM OBJECT IF ITS A NEW ARTIST
+
   def self.edit_album_from_form(params)
     if Artist.check_if_artist_exists(params) == true
       new_album = Album.new(params)
@@ -146,5 +162,16 @@ class Album
       return new_album
     end
   end
+
+  # SEARCH ALBUMS TITLES FOR SEARCH STRING
+
+    def self.search_albums(params)
+      sql = "SELECT * FROM albums WHERE title LIKE $1;"
+      params = "%" + params + "%"
+      values = [params]
+      results = SqlRunner.run(sql, values)
+      return Album.map_albums(results)
+    end
+
 
 end

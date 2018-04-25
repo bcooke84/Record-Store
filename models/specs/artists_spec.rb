@@ -1,4 +1,4 @@
-require_relative( '../../db/sql_runner.rb' ) 
+require_relative( '../../db/sql_runner.rb' )
 require_relative( '../albums.rb' )
 require_relative( '../artists.rb' )
 require( 'minitest/autorun' )
@@ -31,13 +31,19 @@ def setup
     })
   end
 
+  # UPDATED TO WORK ON SEEDED DATA
+
   def test_find_all_artists()
-    assert_equal(2, Artist.find_all().count)
+    assert_equal(9, Artist.find_all().count)
   end
 
   def test_find_by_id()
     result = Artist.find_by_id(1)
     assert_equal(@artist1.name, result.first.name)
+  end
+
+  def test_check_all_artists_have_album()
+    
   end
 
 end

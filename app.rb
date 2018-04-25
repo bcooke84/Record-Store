@@ -7,10 +7,6 @@ require_relative('controllers/albums_controller.rb')
 require_relative( './models/albums.rb' )
 require_relative( './models/artists.rb' )
 
-get '/home' do
-  erb( :home )
-end
-
 get '/home/inventory' do
   @artists = Artist.find_all()
   erb ( :inventory )
@@ -24,15 +20,8 @@ get '/home/inventory/by-stock-level' do
   erb ( :by_stock_level )
 end
 
-get '/home/stock-take' do
-  @albums = Album.find_all()
-  erb ( :stock_take )
-end
-
 get '/home/search-result' do
-  @albums = Album.find_all()
-  @artists = Artist.find_all()
-  @genres = Album.find_unique_genres()
-  @search = params
+  search = params[:search_albums]
+  @albums = Album.search_albums(search_albums)
   erb ( :search_results )
 end

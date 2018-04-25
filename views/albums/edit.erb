@@ -10,7 +10,7 @@
   <ul class="edit_list">
     <li class="form-row">
       <label for="artist_id">Artist:</label>
-      <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>"/>
+      <input list="artist_list" name="artist_id" value="<%= @album.get_artist.name %>" required/>
       <datalist id="artist_list">
         <%@artists.each do |artist| %>
         <option value= "<%=artist.name%>"><%=artist.name%> </option>
@@ -20,7 +20,7 @@
 
     <li class="form-row">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" value="<%= @album.title %>">
+      <input type="text" id="title" name="title" value="<%= @album.title %>" required>
     </li>
 
     <li class="form-row">

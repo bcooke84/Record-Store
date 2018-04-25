@@ -1,21 +1,15 @@
-<p>hello</p>
 
-match_album = []
-for album in @albums
-if album.title.chomp.include? @params
-match_album.push(album)
-end
 
-match_artist = []
-for artist in @artists
-if album.title.chomp.include? @params
-match_artist.push(artist)
-end
-
-match_genre = []
-for genre in @genres
-if genre.chomp.includes? @params
-match_genre.push(genre)
-end
-
-for albums in match_album
+<div class="search_album_container">
+<% @albums.each do |album| %>
+<div class="search_album_cell">
+  <img src= "<%= album.artwork %>"  width="200" height="200">
+  <p>Title:         <%= album.title           %> </p>
+  <p>Artist:        <%= album.get_artist.name %> </p>
+  <p>Release Year:  <%= album.year            %> </p>
+  <p>Genre:         <%= album.genre           %> </p>
+  <p>Stock Level:   <%= album.stock_level     %> </p>
+  <p>Store Price:   <%= album.store_price     %> </p>
+</div>
+<% end %>
+</div>
