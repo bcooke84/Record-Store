@@ -28,8 +28,8 @@
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
     <td class="centre_narrow"><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
     <td class="centre_narrow"><%= album.year %></td>
-    <td class="centre"><%=  album.cost_price %></td>
-    <td class="centre"><%= album.store_price %></td>
+    <td class="centre"> <%= "%.2f" % album.cost_price %></td>
+    <td class="centre"> <%= "%.2f" %album.store_price %></td>
     <td class="centre_<%=album.stock_level_warning%>"><%= album.stock_level %></td>
 
     <td class="centre_narrow">
@@ -66,8 +66,8 @@
   <td class="blank"></td>
   <td class="blank"></td>
   <td class="blank"></td>
-  <td class="centre"> <%=Album.total_album_cost_price%>  </td>
-  <td class="centre"> <%=Album.total_album_store_price%> </td>
+  <td class="centre"> <%= "%.2f" % Album.total_album_cost_price%>  </td>
+  <td class="centre"> <%= "%.2f" % Album.total_album_store_price%> </td>
   <td class="centre"> <%=Album.total_album_stock_level%> </td>
   <td class="blank"></td>
   <td class="blank"></td>
