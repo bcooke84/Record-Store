@@ -57,6 +57,19 @@ class Album
     return Album.new(array)
   end
 
+  def get_artist()
+    sql = "SELECT * FROM artists WHERE id = $1"
+    values = [@artist_id]
+    result = SqlRunner.run(sql, values)
+    return Artist.map_artists(result).first()
+  end
+
+  def self.map_albums(albums_data)
+    return albums_data.map { |album| Album.new(album) }
+  end
+
+  # RETURN STRING TO DESCRIBE STOCK LEVEL - REQUIRED FOR CSS STYLING ON WEB PAGE
+
   def stock_level_warning()
     if @stock_level < 5
       return "LOW"
@@ -66,22 +79,63 @@ class Album
     end
   end
 
-  def get_artist()
-    sql = "SELECT * FROM artists WHERE id = $1"
-    values = [@artist_id]
-    result = SqlRunner.run(sql, values)
-    return Artist.map_artists(result).first()
-  end
-
-
-  def self.map_albums(albums_data)
-    return albums_data.map { |album| Album.new(album) }
-  end
-
-  # SORTED SQL QUERIES FOR SORT FUNTION ON INVENTORY TABLE
+  # SORTED SQL QUERIES FOR SORT FUNCTION IN INVENTORY TABLE
 
   def self.get_albums_by_album()
-    sql = "SELECT * FROM albums ORDER BY title;"
+    sql = "SELECT * FROM albums ORDER BY lower(title);"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_album_desc()
+    sql = "SELECT * FROM albums ORDER BY lower(title) DESC;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_genre()
+    sql = "SELECT * FROM albums ORDER BY lower(genre);"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_genre_desc()
+    sql = "SELECT * FROM albums ORDER BY lower (genre) DESC;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_release_year()
+    sql = "SELECT * FROM albums ORDER BY year;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_release_year_desc()
+    sql = "SELECT * FROM albums ORDER BY year DESC;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_cost_price()
+    sql = "SELECT * FROM albums ORDER BY cost_price;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_cost_price_desc()
+    sql = "SELECT * FROM albums ORDER BY cost_price DESC;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+  def self.get_albums_by_store_price()
+    sql = "SELECT * FROM albums ORDER BY store_price;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+  def self.get_albums_by_store_price_desc()
+    sql = "SELECT * FROM albums ORDER BY store_price DESC;"
     result = SqlRunner.run(sql)
     return Album.map_albums(result)
   end
@@ -92,15 +146,24 @@ class Album
     return Album.map_albums(result)
   end
 
-  def self.get_albums_by_genre(genre)
+  def self.get_albums_by_stock_level_desc()
+    sql = "SELECT * FROM albums ORDER BY stock_level DESC;"
+    result = SqlRunner.run(sql)
+    return Album.map_albums(result)
+  end
+
+
+  # RETURNS ALL OF THE ALBUMS OF A SPECIFC GENRE
+
+  def self.get_all_albums_of_specific_genre(genre)
     sql = "SELECT * FROM albums WHERE genre = $1;"
     values = [genre]
     result = SqlRunner.run(sql, values)
     return Album.map_albums(result)
   end
 
-# RETURNS ONLY THE UNIQUE GENRES FROM DATABASE SO THAT THE GENRE FORM FIELD
-# DOES NOT INCLUDE DUPLICATES
+  # RETURNS ONLY THE UNIQUE GENRES FROM DATABASE SO THAT THE GENRE FORM FIELD
+  # DOES NOT INCLUDE DUPLICATES
 
   def self.find_unique_genres()
     sql = "SELECT DISTINCT genre FROM albums ORDER BY genre;"
@@ -108,7 +171,7 @@ class Album
     return result
   end
 
-# DETERMINE THE STOCK LEVEL FOR CSS COLOURING ON INVENTORY PAGE IN WEB APP
+  # DETERMINE THE STOCK LEVEL FOR CSS COLOURING ON INVENTORY PAGE IN WEB APP
 
   def self.total_album_stock_level()
     albums = self.find_all()
@@ -165,13 +228,13 @@ class Album
 
   # SEARCH ALBUMS TITLES FOR SEARCH STRING
 
-    def self.search_albums(params)
-      sql = "SELECT * FROM albums WHERE lower(title) LIKE $1;"
-      params = "%" + params + "%"
-      values = [params]
-      results = SqlRunner.run(sql, values)
-      return Album.map_albums(results)
-    end
+  def self.search_albums(params)
+    sql = "SELECT * FROM albums WHERE lower(title) LIKE $1;"
+    params = "%" + params + "%"
+    values = [params]
+    results = SqlRunner.run(sql, values)
+    return Album.map_albums(results)
+  end
 
 
 end

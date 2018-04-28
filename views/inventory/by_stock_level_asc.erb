@@ -1,5 +1,3 @@
-<!-- Add New Record Button -->
-
 <form class="add_button_box" action="/home/albums/new" method="get">
  <input class="add_button" type="submit" value="Add New Record">
 </form>
@@ -8,45 +6,42 @@
 
 <div class="inventory_table">
 <table class="inventory">
+
   <tr>
-    <th class="left"><a class="table_heading" href="/home/inventory/by-artist-desc">Artist</th>
-    <th class="left"><a href="/home/inventory/by-album-asc">Album</th>
+    <th class="left"><a href="/home/inventory/by-artist-asc"> Artist </th>
+    <th class="left"><a href="/home/inventory/by-album-asc"> Album </th>
     <th> <a href="/home/inventory/by-genre-asc"> Genre </th>
     <th> <a href="/home/inventory/by-release-year-asc"> Release Year </th>
     <th> <a href="/home/inventory/by-cost-price-asc"> Cost Price (£) </th>
     <th> <a href="/home/inventory/by-store-price-asc"> Store Price (£) </th>
-    <th><a href="/home/inventory/by-stock-level-asc">Stock Level</a></th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th><a class="table_heading" href="/home/inventory/by-stock-level-desc"> Stock Level </a></th>
+    <th> Edit </th>
+    <th> Delete </th>
   </tr>
 
-<% @artists.each do |artist| %>
-<% albums = artist.get_albums %>
-<% albums.each do |album| %>
+  <% albums = Album.get_albums_by_stock_level %>
+  <% albums.each do |album| %>
   <tr>
-    <td><a href="/home/artists/<%=artist.id%>"><%= artist.name %></a></td>
+    <td><a href="/home/artists/<%=album.artist_id%>"><%= Artist.find_by_id(album.artist_id).name %></a></td>
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
     <td class="centre_narrow"><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
     <td class="centre_narrow"><%= album.year %></td>
-    <td class="centre"> <%= "%.2f" % album.cost_price %></td>
-    <td class="centre"> <%= "%.2f" %album.store_price %></td>
+    <td class="centre"><%= "%.2f" % album.cost_price %></td>
+    <td class="centre"><%= "%.2f" % album.store_price %></td>
     <td class="centre_<%=album.stock_level_warning%>"><%= album.stock_level %></td>
-
     <td class="centre_narrow">
       <form action="/home/albums/<%= album.id %>/edit" method="get">
       <input type="submit" value="Edit Record">
     </form></td>
-
     <td class="centre_narrow">
       <form action="/home/albums/<%= album.id %>/delete" method="post">
       <input type="submit" value="Delete Record">
     </form></td>
-
   </tr>
   <% end %>
-<% end %>
 
 <!-- STOCK TAKE TABLE -->
+
 <tr>
   <td class="blank"></td>
 <tr>
@@ -55,9 +50,9 @@
   <td class="blank"></td>
   <td class="blank"></td>
   <td class="blank"></td>
-  <th>Total Album Cost Value (£)</th>
-  <th>Total Album Store Value (£)</th>
-  <th>Total Album Stock</th>
+  <th> Total Album Cost Value (£) </th>
+  <th> Total Album Store Value (£) </th>
+  <th> Total Album Stock </th>
   <td class="blank"></td>
   <td class="blank"></td>
 </tr>
@@ -66,9 +61,9 @@
   <td class="blank"></td>
   <td class="blank"></td>
   <td class="blank"></td>
-  <td class="centre"> <%= "%.2f" % Album.total_album_cost_price%>  </td>
-  <td class="centre"> <%= "%.2f" % Album.total_album_store_price%> </td>
-  <td class="centre"> <%=Album.total_album_stock_level%> </td>
+  <td class="centre"> <%= "%.2f" % Album.total_album_cost_price  %> </td>
+  <td class="centre"> <%= "%.2f" % Album.total_album_store_price %> </td>
+  <td class="centre"> <%=Album.total_album_stock_level %> </td>
   <td class="blank"></td>
   <td class="blank"></td>
 </tr>

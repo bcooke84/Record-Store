@@ -1,0 +1,18 @@
+<% if @search_results == nil %>
+  <h1 class="no_result">NO RESULTS FOUND</h1>
+<% else %>
+
+<div class="search_container">
+<% @search_results.each do |result| %>
+<div class="search_cell">
+  <img src= "<%= result.artwork %>"  width="200" height="200">
+  <p>Title:         <%= result.title                  %> </p>
+  <p>Artist:        <%= result.get_artist.name        %> </p>
+  <p>Release Year:  <%= result.year                   %> </p>
+  <p>Genre:         <%= result.genre                  %> </p>
+  <p>Stock Level:   <%= result.stock_level            %> </p>
+  <p>Store Price:   <%= "%.2f" result.store_price     %> </p>
+</div>
+<% end %>
+</div>
+<%end%>

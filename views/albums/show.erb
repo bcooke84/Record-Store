@@ -3,10 +3,10 @@
 
   <div class="album_cell_single">
     <img src= "<%= @album.artwork %>"  width="200" height="200">
-    <p>Artist:        <%= @album.get_artist.name %> </p>
-    <p>Release Year:  <%= @album.year            %> </p>
-    <p>Genre:         <%= @album.genre           %> </p>
-    <p>Stock Level:   <%= @album.stock_level     %> </p>
-    <p>Store Price:  £<%= @album.store_price     %> </p>
+    <p>Artist:        <%= @album.get_artist.name    %> </p>
+    <p>Release Year:  <%= @album.year               %> </p>
+    <p>Genre:         <%= @album.genre              %> </p>
+    <p>Stock Level:   <%= @album.stock_level        %> </p>
+    <p>Store Price:  £<%= "%.2f" @album.store_price %> </p>
   </div>
 </div>

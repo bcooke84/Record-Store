@@ -8,18 +8,19 @@
 <table class="inventory">
 
   <tr>
-    <th class="left"><a href="/home/inventory">Artist</th>
-    <th class="left"><a class="album_header" href="/home/inventory/by-album">Album</th>
-    <th>Genre</th>
-    <th>Release Year</th>
-    <th>Cost Price (£)</th>
-    <th>Store Price (£)</th>
-    <th><a href="/home/inventory/by-stock-level">Stock Level</a></th>
+    <th class="left"><a class="table_heading" href="/home/inventory/by-artist-asc">Artist</th>
+    <th class="left"><a href="/home/inventory/by-album-asc">Album</th>
+    <th> <a href="/home/inventory/by-genre-asc"> Genre </th>
+    <th> <a href="/home/inventory/by-release-year-asc"> Release Year </th>
+    <th> <a href="/home/inventory/by-cost-price-asc"> Cost Price (£) </th>
+    <th> <a href="/home/inventory/by-store-price-asc"> Store Price (£) </th>
+    <th><a href="/home/inventory/by-stock-level-asc">Stock Level</a></th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
 
-  <% albums = Album.get_albums_by_album %>
+  <% @artists.each do |artist| %>
+  <% albums = artist.get_albums %>
   <% albums.each do |album| %>
   <tr>
     <td><a href="/home/artists/<%=album.artist_id%>"><%= Artist.find_by_id(album.artist_id).name %></a></td>
@@ -38,6 +39,7 @@
       <input type="submit" value="Delete Record">
     </form></td>
   </tr>
+  <% end %>
   <% end %>
 
   <!-- STOCK TAKE TABLE -->

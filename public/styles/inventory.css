@@ -22,9 +22,9 @@
 .inventory_table {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .centre {
@@ -66,12 +66,10 @@ td.blank {
 
 input.add_button {
   background-color: lightgray;
-  border: none;
   color: black;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-  margin: 4px 2px;
   transition: 0.3s;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
@@ -88,10 +86,10 @@ form.add_button_box {
   padding-left: 20px;
 }
 
-a.stock_level_header, a.album_header, a.artist_header {
+a.table_heading {
   background-color: darkgray;
 }
 
-a.stock_level_header:hover, a.album_header:hover, a.artist_header:hover {
+a.table_heading:hover {
   color: whitesmoke;
 }

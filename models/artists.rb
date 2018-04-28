@@ -37,7 +37,13 @@ class Artist
   end
 
   def self.find_all()
-    sql = "SELECT * FROM artists ORDER BY name"
+    sql = "SELECT * FROM artists ORDER BY lower(name)"
+    result = SqlRunner.run(sql)
+    return Artist.map_artists(result)
+  end
+
+  def self.find_all_desc()
+    sql = "SELECT * FROM artists ORDER BY lower(name) DESC"
     result = SqlRunner.run(sql)
     return Artist.map_artists(result)
   end

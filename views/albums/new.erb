@@ -2,7 +2,7 @@
 
   <ul class="edit_list">
     <li class="form-row">
-      <input list="artist_list" name="artist_id" required placeholder="Artist Name"/>
+      <input list="artist_list" name="artist_id" placeholder="Artist Name" required/>
       <datalist id="artist_list">
         <%@artists.each do |artist| %>
         <option value= "<%=artist.name%>"><%=artist.name%> </option>
@@ -11,11 +11,11 @@
     </li>
 
     <li class="form-row">
-      <input type="text" id="title" name="title" required placeholder="Album Title">
+      <input type="text" id="title" name="title" placeholder="Album Title" required >
     </li>
 
     <li class="form-row">
-      <input list="genre_list" name="genre" placeholder="Genre"/>
+      <input list="genre_list" name="genre" placeholder="Genre" required/>
       <datalist id="genre_list">
         <%@genres.each do |genre| %>
         <option value= "<%=genre["genre"]%>"> <%=genre["genre"]%> </option>
@@ -36,7 +36,7 @@
     </li>
 
     <li class="form-row">
-      <input type="number" id="store_price" name="store_price" step="0.01" placeholder="Store Price" min="0.00">
+      <input type="number" id="store_price" name="store_price" step="0.01" placeholder="Store Price" min="0.00" required>
     </li>
 
     <li class="form-row">

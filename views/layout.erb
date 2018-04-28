@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Southside Sounds</title>
+
   <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,400,700" rel="stylesheet">
   <link rel="icon" href="/images/favicon1.ico"/>
+
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <link rel="stylesheet" type="text/css" href="/styles/album.css">
   <link rel="stylesheet" type="text/css" href="/styles/artist.css">
@@ -20,20 +24,19 @@
 
 <body>
   <nav class="navbar">
+
     <ul class="menu_list">
       <li><a href="/home/inventory">Stock Inventory</a></li>
       <li><a href="/home/artists">Artist List</a></li>
       <li><a href="/home/albums">Album List</a></li>
     </ul>
+
     <img src="/images/logo1.png" width="150px" height='150px'>
-    <div class="search_bars">
-      <form class="search_container" action="/home/search-result/artists" method="get" autocomplete="off">
-        <input class="search_bar_input" type="text" placeholder="Search artists..." name="search_artists">
+
+    <div class="search">
+      <form class="search_container" action="/home/search-result/results" method="get" autocomplete="off">
+        <input class="search_bar_input" type="text" placeholder="Search..." name="search_bar">
         <button class = "search_bar_button" type="submit">Submit</button>
-      </form>
-      <form class="search_container" action="/home/search-result/albums" method="get" autocomplete="off">
-        <input class="search_bar_input" type="text" placeholder="Search albums..." name="search_albums">
-        <button class="search_bar_button" type="submit">Submit</button>
       </form>
     </div>
   </nav>
