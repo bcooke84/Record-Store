@@ -34,6 +34,21 @@ artist8 = Artist.new({
 artist9 = Artist.new({
   'name' => 'Niteworks'
   })
+artist10 = Artist.new({
+  'name' => 'DJ Jazzy Jeff & The Fresh Prince'
+  })
+artist11 = Artist.new({
+  'name' => 'The Jackson 5'
+  })
+artist12 = Artist.new({
+  'name' => 'The Beach Boys'
+  })
+artist13 = Artist.new({
+  'name' => 'Ice Cube'
+  })
+artist14 = Artist.new({
+  'name' => 'A Tribe Called Quest'
+  })
 
 artist1.save()
 artist2.save()
@@ -44,6 +59,11 @@ artist6.save()
 artist7.save()
 artist8.save()
 artist9.save()
+artist10.save()
+artist11.save()
+artist12.save()
+artist13.save()
+artist14.save()
 
 album1 = Album.new({
   'title' => 'Humbug',
@@ -185,6 +205,66 @@ album14 = Album.new({
   'store_price' => 10.99,
   'artist_id' => artist9.id
   })
+album15 = Album.new({
+  'title' => 'Homebase',
+  'stock_level' => 7,
+  'genre' => 'Hip-Hop',
+  'year' => 1991,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/5/55/Homebase_%28DJ_Jazzy_Jeff_%26_The_Fresh_Prince_album_-_cover_art%29.jpg',
+  'cost_price' => 5.50,
+  'store_price' => 13.99,
+  'artist_id' => artist10.id
+  })
+album16 = Album.new({
+  'title' => 'Diana Ross Presents The Jackson 5',
+  'stock_level' => 3,
+  'genre' => 'Pop',
+  'year' => 1969,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/9/9c/Ross-presents-jackson-5-350.jpg',
+  'cost_price' => 9.00,
+  'store_price' => 16.99,
+  'artist_id' => artist11.id
+  })
+album17 = Album.new({
+  'title' => 'Smiley Smile',
+  'stock_level' => 1,
+  'genre' => 'Pop',
+  'year' => 1967,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/2/21/SmileySmileCover.jpg',
+  'cost_price' => 8.70,
+  'store_price' => 15.99,
+  'artist_id' => artist12.id
+  })
+album18 = Album.new({
+  'title' => 'The Predator',
+  'stock_level' => 3,
+  'genre' => 'Hip-Hop',
+  'year' => 1992,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/8/8e/Ice_Cube_-_The_Predator_-_Album_Cover.jpg',
+  'cost_price' => 7.65,
+  'store_price' => 11.99,
+  'artist_id' => artist13.id
+  })
+album19 = Album.new({
+  'title' => 'People''s Instinctive Travels and the Paths of Rhythm',
+  'stock_level' => 11,
+  'genre' => 'Hip-Hop',
+  'year' => 1990,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/f/f3/ATCQPeople%27sInstinctTravels.jpg',
+  'cost_price' => 6.98,
+  'store_price' => 12.99,
+  'artist_id' => artist14.id
+  })
+album20 = Album.new({
+  'title' => 'Pet Sounds',
+  'stock_level' => 3,
+  'genre' => 'Pop',
+  'year' => 1966,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/b/bb/PetSoundsCover.jpg',
+  'cost_price' => 6.51,
+  'store_price' => 11.99,
+  'artist_id' => artist12.id
+  })
 
 album1.save()
 album2.save()
@@ -200,6 +280,12 @@ album11.save()
 album12.save()
 album13.save()
 album14.save()
+album15.save()
+album16.save()
+album17.save()
+album18.save()
+album19.save()
+album20.save()
 
 # binding.pry
 # nil

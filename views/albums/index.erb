@@ -2,12 +2,12 @@
   <% @albums.each do |album| %>
   <div class="album_cell" id="albums">
     <img src= "<%= album.artwork %>"  width="200" height="200">
-    <p class="title">Title: <%= album.title       %> </p>
-    <p>Artist:       <%= album.get_artist.name    %> </p>
-    <p>Release Year: <%= album.year               %> </p>
-    <p>Genre:        <%= album.genre              %> </p>
-    <p>Stock Level:  <%= album.stock_level        %> </p>
-    <p>Store Price:  <%= "%.2f" album.store_price %> </p>
+    <p class="title">Title: <%= album.title          %> </p>
+    <p>Artist:       <%= album.get_artist.name       %> </p>
+    <p>Release Year: <%= album.year                  %> </p>
+    <p>Genre:        <%= album.genre                 %> </p>
+    <p>Stock Level:  <%= album.stock_level           %> </p>
+    <p>Store Price:  £<%= "%.2f" % album.store_price %> </p>
   </div>
   <% end %>
 </div>

@@ -6,12 +6,12 @@
 <% @search_results.each do |result| %>
 <div class="search_cell">
   <img src= "<%= result.artwork %>"  width="200" height="200">
-  <p>Title:         <%= result.title                  %> </p>
   <p>Artist:        <%= result.get_artist.name        %> </p>
+  <p>Title:         <%= result.title                  %> </p>
   <p>Release Year:  <%= result.year                   %> </p>
   <p>Genre:         <%= result.genre                  %> </p>
   <p>Stock Level:   <%= result.stock_level            %> </p>
-  <p>Store Price:   <%= "%.2f" result.store_price     %> </p>
+  <p>Store Price:   <%= "%.2f" % result.store_price   %> </p>
 </div>
 <% end %>
 </div>

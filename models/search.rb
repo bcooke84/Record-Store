@@ -9,16 +9,19 @@ class Search
   # ARTIST ITEMS
 
   def self.new_search(params)
+    artist_array = []
+    album_array = []
     results_array = []
     artists = Artist.search_artists(params)
     albums = Album.search_albums(params)
     for artist in artists
-      results_array = artist.get_albums
+      artist_array +=artist.get_albums
     end
     for album in albums
-      results_array.push(album)
+      album_array.push(album)
     end
-    results_array.uniq! { |album| album.id}
+    results_array = (artist_array + album_array).uniq { |album| album.id}
+    results_array.sort_by! { |album| album.get_artist.name.downcase }
     return results_array
   end
 
