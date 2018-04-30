@@ -1,11 +1,11 @@
-<% if @search_results == nil %>
+<% if @search_results.count == 0 %>
   <h1 class="no_result">NO RESULTS FOUND</h1>
 <% else %>
 
 <div class="search_container">
 <% @search_results.each do |result| %>
 <div class="search_cell">
-  <img src= "<%= result.artwork %>"  width="200" height="200">
+  <img src= "<%= result.artwork %>"  width="200" height="200" class="album_image">
   <p>Artist:        <%= result.get_artist.name        %> </p>
   <p>Title:         <%= result.title                  %> </p>
   <p>Release Year:  <%= result.year                   %> </p>

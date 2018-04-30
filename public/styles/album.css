@@ -21,3 +21,11 @@
 p.title {
   width: 200px;
 }
+
+.album_image {
+  transition:all 0.3s ease-out;
+}
+
+.album_image:hover {
+  transform:scale(1.03);
+}

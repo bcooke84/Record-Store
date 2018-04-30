@@ -5,7 +5,7 @@
 
   <% albums.each do |album| %>
   <div class="artist_album_cell" id="albums">
-    <img src= "<%= album.artwork %>"  width="200" height="200">
+    <img src= "<%= album.artwork %>"  width="200" height="200" class="album_image">
     <p class="title">Title: <%= album.title       %> </p>
     <p>Release Year: <%= album.year               %> </p>
     <p>Genre:        <%= album.genre              %> </p>

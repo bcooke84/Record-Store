@@ -3,7 +3,7 @@
 <div class="genre_album_container">
 <% @albums.each do |album| %>
 <div class="genre_album_cell">
-  <img src= "<%= album.artwork %>"  width="200" height="200">
+  <img src= "<%= album.artwork %>"  width="200" height="200" class="album_image">
   <p>Artist:        <%= album.get_artist.name       %> </p>
   <p>Title:         <%= album.title                 %> </p>
   <p>Release Year:  <%= album.year                  %> </p>
