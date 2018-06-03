@@ -4,8 +4,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   word-break: normal;
-  /* padding-left: 200px;
-  padding-right: 2000px; */
 }
 
 .album_cell {
