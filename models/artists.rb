@@ -1,7 +1,5 @@
 require_relative( '../db/sql_runner.rb' )
 require_relative( 'albums.rb' )
-require('pry-byebug')
-
 class Artist
 
   attr_reader :id

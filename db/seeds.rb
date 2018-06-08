@@ -2,8 +2,6 @@ require_relative( 'sql_runner.rb' )
 require_relative( '../models/albums.rb' )
 require_relative( '../models/artists.rb' )
 
-require ( 'pry-byebug' )
-
 Album.delete_all()
 Artist.delete_all()
 

@@ -1,7 +1,6 @@
 require_relative( '../db/sql_runner.rb' )
 require_relative( 'albums.rb' )
 require_relative( 'artists.rb' )
-require('pry-byebug')
 
 class Search
 

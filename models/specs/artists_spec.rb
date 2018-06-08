@@ -3,7 +3,6 @@ require_relative( '../albums.rb' )
 require_relative( '../artists.rb' )
 require( 'minitest/autorun' )
 require( 'minitest/rg' )
-require( 'pry-byebug' )
 
 class ArtistTest < MiniTest::Test
 
@@ -43,7 +42,7 @@ def setup
   end
 
   def test_check_all_artists_have_album()
-    
+
   end
 
 end

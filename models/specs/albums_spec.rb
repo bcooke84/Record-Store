@@ -3,7 +3,6 @@ require_relative( '../albums.rb' )
 require_relative( '../artists.rb' )
 require( 'minitest/autorun' )
 require( 'minitest/rg' )
-require( 'pry-byebug' )
 
 class AlbumTest < MiniTest::Test
 
