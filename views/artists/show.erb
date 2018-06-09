@@ -1,10 +1,10 @@
-<h1 class="artist_name"> <%= @artist.name %>  </h1>
+<h1 class="filter_name"> <%= @artist.name %>  </h1>
 <% albums = @artist.get_albums %>
 
-<div class="artist_album_container">
+<div class="album_container">
 
   <% albums.each do |album| %>
-  <div class="artist_album_cell" id="albums">
+  <div class="album_cell" id="albums">
     <img src= "<%= album.artwork %>"  width="200" height="200" class="album_image">
     <p class="title">Title: <%= album.title       %> </p>
     <p>Release Year: <%= album.year               %> </p>

@@ -86,11 +86,7 @@ form.add_button_box {
   padding-left: 20px;
 }
 
-/* a.table_heading {
-  background-color: darkgray;
-} */
-
-th.selected {
+a.table_heading {
   background-color: darkgray;
 }
 

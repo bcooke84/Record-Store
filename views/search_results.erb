@@ -2,9 +2,9 @@
   <h1 class="no_result">NO RESULTS FOUND</h1>
 <% else %>
 
-<div class="search_container">
+<div class="album_container">
 <% @search_results.each do |result| %>
-<div class="search_cell">
+<div class="album_cell">
   <img src= "<%= result.artwork %>"  width="200" height="200" class="album_image">
   <p>Artist:        <%= result.get_artist.name        %> </p>
   <p>Title:         <%= result.title                  %> </p>
