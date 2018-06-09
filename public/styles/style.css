@@ -64,3 +64,11 @@ form.search_container {
   width: 120px;
   height: 25px;
 }
+
+.search_container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-break: normal;
+}
