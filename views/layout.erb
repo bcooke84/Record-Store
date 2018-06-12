@@ -14,12 +14,8 @@
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <link rel="stylesheet" type="text/css" href="/styles/album.css">
   <link rel="stylesheet" type="text/css" href="/styles/artist.css">
-  <link rel="stylesheet" type="text/css" href="/styles/artist_albums.css">
   <link rel="stylesheet" type="text/css" href="/styles/inventory.css">
-  <link rel="stylesheet" type="text/css" href="/styles/genre.css">
   <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/search_albums.css">
-  <link rel="stylesheet" type="text/css" href="/styles/single_album.css">
 </head>
 
 <body>
@@ -35,7 +31,7 @@
 
     <div class="search">
       <form class="search_container" action="/home/search-result/results" method="get" autocomplete="off">
-        <input class="search_bar_input" type="text" placeholder="Search..." name="search_bar">
+        <input class="search_bar_input" type="text" placeholder="Search..." name="search_bar" required minlength = "2">
         <button class = "search_bar_button" type="submit">Submit</button>
       </form>
     </div>

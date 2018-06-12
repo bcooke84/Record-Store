@@ -25,6 +25,7 @@ a:active {
   flex-direction: row;
   justify-content: space-between;
   padding-top: 20px;
+  flex-grow: 1;
 }
 
 ul {

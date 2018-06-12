@@ -70,7 +70,6 @@ input.add_button {
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-  transition: 0.3s;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
@@ -86,10 +85,15 @@ form.add_button_box {
   padding-left: 20px;
 }
 
-a.table_heading {
-  background-color: darkgray;
+a:hover {
+  color: whitesmoke;
 }
 
-a.table_heading:hover {
-  color: whitesmoke;
+#selected-left {
+  background-color: darkgray;
+  text-align: left;
+}
+
+#selected {
+  background-color: darkgray;
 }
