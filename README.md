@@ -27,5 +27,6 @@ CSS styling only to be used.
 - Sorting added for each property on Inventory page.
 - Edit function pre-populates existing details.
 - Total cost value, store  value and stock-level added to inventory page.
-- Delete and edit functions utilise 'datalists' and allow existing Artists & Genres to be selected - preventing against input and error and duplication.
+
+- Delete and edit functions utilise 'datalists' and allow existing Artists & Genres to be selected - preventing against input error and duplication.
 - Additional files added for deployment to Heroku:  https://record-store-bc.herokuapp.com/home/inventory
