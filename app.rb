@@ -8,7 +8,7 @@ require_relative( './models/artists.rb' )
 require_relative( './models/search.rb' )
 
   get '/' do
-    redirect to '/home/inventory'
+    redirect to '/home'
   end
 
   get '/home' do
