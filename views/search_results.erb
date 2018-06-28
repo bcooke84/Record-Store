@@ -1,18 +1,21 @@
 <% if @search_results.count == 0 %>
-  <h1 class="no_result">NO RESULTS FOUND</h1>
+<h1 class="no_result">NO RESULTS FOUND</h1>
 <% else %>
 
+<h1 class="filter_name"> Search Results:  </h1>
 <div class="album_container">
-<% @search_results.each do |result| %>
-<div class="album_cell">
-  <img src= "<%= result.artwork %>"  width="200" height="200" class="album_image">
-  <p>Artist:        <%= result.get_artist.name        %> </p>
-  <p>Title:         <%= result.title                  %> </p>
-  <p>Release Year:  <%= result.year                   %> </p>
-  <p>Genre:         <%= result.genre                  %> </p>
-  <p>Stock Level:   <%= result.stock_level            %> </p>
-  <p>Store Price:   <%= "%.2f" % result.store_price   %> </p>
-</div>
-<% end %>
+
+  <% @search_results.each do |result| %>
+
+  <div class="album_cell">
+    <img src= "<%= result.artwork %>"  width="200" height="200" class="album_image">
+    <p class="title">Title: <a class="artist-link" href="/home/albums/<%=result.id%>"><%= result.title %> </a></p>
+    <p>Artist:       <a class="artist-link" href="/home/artists/<%=result.artist_id%>"><%= result.get_artist.name %> </a></p>
+    <p>Release Year: <a class="artist-link" href="/home/albums/<%=result.year%>/by-year"><%= result.year %> </a></p>
+    <p>Genre:        <a class="artist-link" href="/home/albums/<%=result.genre%>/by-genre"><%= result.genre %> </a></p>
+    <p>Stock Level:   <%= result.stock_level            %> </p>
+    <p>Store Price:   <%= "%.2f" % result.store_price   %> </p>
+  </div>
+  <% end %>
 </div>
 <%end%>

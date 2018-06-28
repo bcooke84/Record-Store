@@ -27,7 +27,7 @@
     <td><a href="/home/artists/<%=artist.id%>"><%= artist.name %></a></td>
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
     <td class="centre_narrow"><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
-    <td class="centre_narrow"><%= album.year %></td>
+    <td class="centre_narrow"><a href="/home/albums/<%=album.year%>/by-year"><%= album.year %></a></td>
     <td class="centre"> <%= "%.2f" % album.cost_price %></td>
     <td class="centre"> <%= "%.2f" % album.store_price %></td>
     <td class="centre_<%=album.stock_level_warning%>"><%= album.stock_level %></td>

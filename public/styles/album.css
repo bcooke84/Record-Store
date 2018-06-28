@@ -14,6 +14,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   word-break: normal;
+  /* flex-grow: 1; */
 }
 
 .album_cell {
@@ -23,10 +24,10 @@
   display: inline-block;
   width: 200px;
   word-break: normal;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
-p.title {
+p#title {
   width: 200px;
 }
 
@@ -36,4 +37,16 @@ p.title {
 
 .album_image:hover {
   transform:scale(1.03);
+}
+
+.album-field {
+  font-weight: bold;
+}
+
+a.artist-link {
+  text-decoration: none;
+}
+
+a.artist-link:hover {
+  color: darkgray;
 }

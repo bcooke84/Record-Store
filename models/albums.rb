@@ -153,9 +153,18 @@ class Album
 
   # RETURNS ALL OF THE ALBUMS OF A SPECIFC GENRE
 
-  def self.get_all_albums_of_specific_genre(genre)
+  def self.get_albums_of_specific_genre(genre)
     sql = "SELECT * FROM albums WHERE genre = $1;"
     values = [genre]
+    result = SqlRunner.run(sql, values)
+    return Album.map_albums(result)
+  end
+
+  # RETURNS ALL OF THE ALBUMS BY RELEASE YEAR
+
+  def self.get_albums_by_release_year(year)
+    sql = "SELECT * FROM albums WHERE year = $1;"
+    values = [year]
     result = SqlRunner.run(sql, values)
     return Album.map_albums(result)
   end

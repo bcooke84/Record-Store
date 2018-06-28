@@ -11,6 +11,10 @@ require_relative( './models/search.rb' )
     redirect to '/home/inventory'
   end
 
+  get '/home' do
+    erb ( :home )
+  end
+
   get '/home/inventory' do
     @artists = Artist.find_all()
     erb ( :inventory )

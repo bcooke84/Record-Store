@@ -1,0 +1,15 @@
+div#home-page {
+  padding-right: 300px;
+  padding-left: 300px;
+}
+
+#home-heading {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+li.home-list {
+  width: 500px;
+  list-style: circle;
+}

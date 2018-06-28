@@ -1,4 +1,4 @@
-<h1 class="filter_name"> <%= @album.genre %>  </h1>
+<h1 class="filter_name"> <%= @album.year %>  </h1>
 
 <div class="album_container">
 <% @albums.each do |album| %>
@@ -6,7 +6,7 @@
   <img src= "<%= album.artwork %>"  width="200" height="200" class="album_image">
   <p>Title: <a class="artist-link" href="/home/albums/<%=album.id%>"><%= album.title %> </a></p>
   <p>Artist:       <a class="artist-link" href="/home/artists/<%=album.artist_id%>"><%= album.get_artist.name %> </a></p>
-  <p>Release Year: <a class="artist-link" href="/home/albums/<%=album.year%>/by-year"><%= album.year %> </a></p>
+  <p>Genre:        <a class="artist-link" href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %> </a></p>
   <p>Stock Level:   <%= album.stock_level           %> </p>
   <p>Store Price:   £<%= "%.2f" % album.store_price %> </p>
 </div>

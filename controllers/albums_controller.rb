@@ -60,7 +60,14 @@ end
 
 # GENRE
 get "/home/albums/:genre/by-genre" do
-  @albums = Album.get_all_albums_of_specific_genre(params[:genre])
+  @albums = Album.get_albums_of_specific_genre(params[:genre])
   @album = @albums[0]
   erb ( :'albums/genre')
+end
+
+# YEAR
+get "/home/albums/:year/by-year" do
+  @albums = Album.get_albums_by_release_year(params[:year])
+  @album = @albums[0]
+  erb ( :'albums/year')
 end
