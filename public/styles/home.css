@@ -7,26 +7,35 @@ div#home-page {
   font-size: 40px;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-div#home-lists {
+#container-div {
   display: flex;
-  justify-content: space-between;
-  padding-right: 200px;
-  overflow: scroll;
-  height: 240px;
 }
 
-li.home-list {
-  width: 385px;
-  list-style: circle;
+#container-one {
+  display: flex;
+  flex-direction: column;
+}
+
+#container-two {
+  /* display: flex; */
+  padding-left: 65px;
 }
 
 #mvp-list{
   list-style: circle;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  width: 375px;
 }
 
 #additional-list {
   list-style: circle;
+  width: 425px;
+}
+
+div#brief-div {
+  width: 375px;
 }
