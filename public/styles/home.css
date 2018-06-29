@@ -1,6 +1,6 @@
 div#home-page {
-  padding-right: 300px;
-  padding-left: 300px;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
 #home-heading {
@@ -9,7 +9,24 @@ div#home-page {
   justify-content: center;
 }
 
+div#home-lists {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 200px;
+  overflow: scroll;
+  height: 240px;
+}
+
 li.home-list {
-  width: 500px;
+  width: 385px;
+  list-style: circle;
+}
+
+#mvp-list{
+  list-style: circle;
+  padding-left: 10px;
+}
+
+#additional-list {
   list-style: circle;
 }

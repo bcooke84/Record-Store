@@ -67,7 +67,7 @@ end
 
 # YEAR
 get "/home/albums/:year/by-year" do
-  @albums = Album.get_albums_by_release_year(params[:year])
+  @albums = Album.get_albums_by_specific_release_year(params[:year])
   @album = @albums[0]
   erb ( :'albums/year')
 end

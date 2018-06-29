@@ -8,13 +8,13 @@
 <table class="inventory">
 
   <tr>
-    <th class="left"><a href="/home/inventory/by-artist-asc">Artist</th>
-    <th class="left"><a href="/home/inventory/by-album-asc">Album</th>
-    <th> <a href="/home/inventory/by-genre-asc"> Genre </th>
-    <th> <a href="/home/inventory/by-release-year-asc"> Release Year </th>
-    <th id="selected"> <a href="/home/inventory/by-cost-price-desc"> Cost Price (£) </th>
-    <th> <a href="/home/inventory/by-store-price-asc"> Store Price (£) </th>
-    <th><a href="/home/inventory/by-stock-level-asc">Stock Level</a></th>
+    <th class="left"><a href="/home/inventory/by-artist-asc">Artist </a></th>
+    <th class="left"><a href="/home/inventory/by-album-asc">Album </a></th>
+    <th> <a href="/home/inventory/by-genre-asc"> Genre </a></th>
+    <th> <a href="/home/inventory/by-release-year-asc"> Release Year </a></th>
+    <th id="selected"> <a href="/home/inventory/by-cost-price-desc"> Cost Price (£) </a></th>
+    <th> <a href="/home/inventory/by-store-price-asc"> Store Price (£) </a></th>
+    <th><a href="/home/inventory/by-stock-level-asc">Stock Level </a></th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -25,7 +25,7 @@
     <td><a href="/home/artists/<%=album.artist_id%>"><%= Artist.find_by_id(album.artist_id).name %></a></td>
     <td><a href="/home/albums/<%=album.id%>"><%= album.title %></a></td>
     <td class="centre_narrow"><a href="/home/albums/<%=album.genre%>/by-genre"><%= album.genre %></a></td>
-    <td class="centre_narrow"><%= album.year %></td>
+    <td class="centre_narrow"><a href="/home/albums/<%=album.year%>/by-year"><%= album.year %></a></td>
     <td class="centre"><%= "%.2f" % album.cost_price %></td>
     <td class="centre"><%= "%.2f" % album.store_price %></td>
     <td class="centre_<%=album.stock_level_warning%>"><%= album.stock_level %></td>

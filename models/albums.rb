@@ -162,7 +162,7 @@ class Album
 
   # RETURNS ALL OF THE ALBUMS BY RELEASE YEAR
 
-  def self.get_albums_by_release_year(year)
+  def self.get_albums_by_specific_release_year(year)
     sql = "SELECT * FROM albums WHERE year = $1;"
     values = [year]
     result = SqlRunner.run(sql, values)
